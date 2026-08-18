@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# The authoritative master is verified by SHA-256 and supplied externally.
+*.pkl
+

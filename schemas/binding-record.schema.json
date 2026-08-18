@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atlas-clarus.example/schemas/binding-record-v0.1.0.json",
+  "title": "ATLAS Clarus Binding Record v0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "input_basis",
+    "input_rgb",
+    "reference_variant",
+    "source_atlas_row_id",
+    "production_atlas_row_id",
+    "source_rgb_distance_squared",
+    "source_reference",
+    "production_reference",
+    "source_rgb",
+    "production_rgb",
+    "source_delta_lambda_nm",
+    "production_delta_lambda_nm",
+    "master_sha256",
+    "deltaE_stage",
+    "deltaE_influenced_source_identity",
+    "deltaE_influenced_production_selection"
+  ],
+  "properties": {
+    "schema_id": {"const": "ATLAS_CLARUS_BINDING_RECORD_V0_1_0"},
+    "input_basis": {"const": "documented 8-bit sRGB"},
+    "input_rgb": {"$ref": "#/$defs/rgb"},
+    "reference_variant": {
+      "enum": [
+        "RGB_ONLY_DLambda_POSTHOC",
+        "RGB_ONLY_DLambda_ACTIVE_PRODUCTION_SELECTION"
+      ]
+    },
+    "source_atlas_row_id": {"type": "integer", "minimum": 0},
+    "production_atlas_row_id": {"type": "integer", "minimum": 0},
+    "source_rgb_distance_squared": {"type": "integer", "minimum": 0},
+    "source_reference": {"type": "string", "minLength": 1},
+    "production_reference": {"type": "string", "minLength": 1},
+    "source_rgb": {"$ref": "#/$defs/rgb"},
+    "production_rgb": {"$ref": "#/$defs/rgb"},
+    "source_delta_lambda_nm": {"type": "number"},
+    "production_delta_lambda_nm": {"type": "number"},
+    "master_sha256": {"type": "string"},
+    "deltaE_stage": {"const": "POSTHOC_ONLY"},
+    "deltaE_influenced_source_identity": {"const": false},
+    "deltaE_influenced_production_selection": {"const": false}
+  },
+  "$defs": {
+    "rgb": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "integer", "minimum": 0, "maximum": 255}
+    }
+  }
+}
+
