@@ -14,6 +14,28 @@ ATLAS Clarus separates three layers that must not be confused:
 
 A production conversion may change RGB, CMYK, or other device values. It must not silently replace the underlying reference identity.
 
+## Parallel production evaluation
+
+A frozen ATLAS reference identity may be evaluated independently against conventional 4C and FOGRA55 ECG production conditions. These are parallel, profile-dependent production paths. Neither path modifies the underlying ATLAS reference identity, and neither path is derived from the other.
+
+Each path produces and records its own:
+
+- target profile and profile hash;
+- rendering intent and black-point-compensation setting;
+- device values;
+- digital feasibility or comparison result;
+- measured quality-control result, when physical measurements are available.
+
+The architecture is therefore:
+
+```text
+Frozen ATLAS reference identity
+├── 4C evaluation          ──> separate result ──> separate measured QC
+└── FOGRA55 ECG evaluation ──> separate result ──> separate measured QC
+```
+
+A digital ICC calculation must not be presented as a measured print result.
+
 ## Current status
 
 This repository is private and under active development. It is intended to contain the verified binding core, schemas, tests, technical documentation, and integration adapters.
@@ -23,6 +45,7 @@ The current work is a reference implementation. It is not a replacement for phys
 ## Methodological boundaries
 
 - Reference identity and device recipes are stored separately.
+- 4C and FOGRA55 ECG are independent, parallel production evaluations.
 - ICC profiles, rendering intent, and black-point compensation belong to the production layer.
 - Runtime derivatives must not be treated as independent colour authorities.
 - Master assets require explicit provenance and cryptographic verification.
