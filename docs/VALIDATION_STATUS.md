@@ -19,6 +19,14 @@ A pass at one level does not imply a pass at the next level.
 
 ## Current evidence summary
 
+### Core real-master gate
+
+The hash-bound Core suite was executed against the authoritative 9,741,473-byte PKL master on commit `885979347b95633c5ccb4995be6b526ec3e541a6`.
+
+`23 tests run → 23 passed → 0 failed → 0 skipped`
+
+This includes the canonical four-case POSTHOC matrix and the ACTIVE two-ID regression. The machine-readable record is published under [`evidence/real-master/`](../evidence/real-master/). This Core PASS does not alter the application, cross-system, DEVICE, or measured-QC statuses below.
+
 | Application | Public package | Source fixture | Runtime | Persistence / roundtrip | Cross-system | DEVICE | Measured QC |
 |---|---|---|---|---|---|---|---|
 | Inkscape v0.3.0 | Published frozen baseline | Documented | PASS | PASS | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
