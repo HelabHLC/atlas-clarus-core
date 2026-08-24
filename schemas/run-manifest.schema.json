@@ -7,7 +7,7 @@
   "additionalProperties": false,
   "required": [
     "schema_id", "workflow_version", "software", "input", "master",
-    "operation", "bindings", "layer_status"
+    "operation", "bindings", "two_id_evidence", "layer_status"
   ],
   "properties": {
     "schema_id": {"const": "ATLAS_CLARUS_RUN_MANIFEST_V0_1_0"},
@@ -87,6 +87,40 @@
       "type": "array",
       "minItems": 1,
       "items": {"$ref": "binding-record.schema.json"}
+    },
+    "two_id_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_pixels", "mapping"],
+      "properties": {
+        "total_pixels": {"type": "integer", "minimum": 1},
+        "mapping": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_atlas_row_id", "production_atlas_row_id",
+              "pixel_count", "pixel_fraction", "production_rgb_rank",
+              "source_delta_lambda_nm", "production_delta_lambda_nm",
+              "selection_reason"
+            ],
+            "properties": {
+              "source_atlas_row_id": {"type": "integer", "minimum": 0},
+              "production_atlas_row_id": {"type": "integer", "minimum": 0},
+              "pixel_count": {"type": "integer", "minimum": 1},
+              "pixel_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+              "production_rgb_rank": {"enum": [1, 2]},
+              "source_delta_lambda_nm": {"type": "number"},
+              "production_delta_lambda_nm": {"type": "number"},
+              "selection_reason": {
+                "enum": ["SOURCE_IDENTITY", "MIN_ABS_DELTA_LAMBDA_WITHIN_RGB_TOP_2"]
+              }
+            }
+          }
+        }
+      }
     },
     "layer_status": {
       "type": "object",
