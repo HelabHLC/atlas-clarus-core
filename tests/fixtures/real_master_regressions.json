@@ -1,0 +1,39 @@
+{
+  "posthoc": [
+    {
+      "input_rgb": [170, 195, 60],
+      "source_atlas_row_id": 4085,
+      "source_reference": "H110_L075_C065",
+      "source_rgb": [170, 195, 60],
+      "source_rgb_distance_squared": 0
+    },
+    {
+      "input_rgb": [0, 52, 156],
+      "source_atlas_row_id": 10519,
+      "source_reference": "H285_L025_C065",
+      "source_rgb": [0, 55, 157],
+      "source_rgb_distance_squared": 10
+    },
+    {
+      "input_rgb": [61, 123, 25],
+      "source_atlas_row_id": 4966,
+      "source_reference": "H130_L045_C055",
+      "source_rgb": [55, 121, 26],
+      "source_rgb_distance_squared": 41
+    },
+    {
+      "input_rgb": [242, 226, 214],
+      "source_atlas_row_id": 1660,
+      "source_reference": "H050_L090_C010",
+      "source_rgb": [243, 223, 212],
+      "source_rgb_distance_squared": 14
+    }
+  ],
+  "active": [
+    {
+      "input_rgb": [170, 195, 60],
+      "source_atlas_row_id": 4085,
+      "production_atlas_row_id": 3892
+    }
+  ]
+}
