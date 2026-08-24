@@ -1,0 +1,48 @@
+{
+  "release": {
+    "name": "ATLAS Clarus Inkscape",
+    "version": "0.3.0",
+    "release_class": "VALIDATED_PROTOTYPE_BASELINE",
+    "freeze_status": "FROZEN",
+    "freeze_date": "2026-08-23"
+  },
+  "archive": {
+    "filename": "ATLAS_Clarus_Inkscape_v0.3.0_VALIDATED_PROTOTYPE_FREEZE.zip",
+    "sha256": "761c09936817b76c779c844084e4ce23b5a60fc5179c331d1245fb4e90808005",
+    "byte_identical_to_validated_freeze": true
+  },
+  "normative_basis": {
+    "workflow": "ATLAS Clarus v3.4.0",
+    "identity_space": "documented 8-bit sRGB",
+    "distance": "integer squared Euclidean RGB",
+    "K": "UNLIMITED",
+    "tie_break": "smaller atlas_row_id",
+    "Lab_in_identity_selection": false,
+    "DeltaE_in_identity_selection": false,
+    "ICC_in_identity_selection": false
+  },
+  "reference": {
+    "bundled_representation": "atlas_master_compact.json",
+    "rows": 13283,
+    "upstream_active_master": "atlas_master__active_master__v2_illumext.pkl",
+    "upstream_master_sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
+  },
+  "validation": {
+    "INKSCAPE_RUNTIME": "PASS",
+    "EXTENSION_EXECUTION": "PASS",
+    "CSS_DETECTION": "PASS",
+    "RGB_ONLY_BINDING": "PASS",
+    "HLC_PKL_ROW_OUTPUT": "PASS",
+    "AUDIT_METADATA_PERSISTENCE": "PASS",
+    "SAVED_SVG_PERSISTENCE": "PASS",
+    "MEASURED_QC": "NOT_MEASURED"
+  },
+  "validated_fixture": {
+    "source_hex": "#00349C",
+    "reference": "H285_L025_C065",
+    "atlas_row_id": 10519,
+    "pkl_hex": "#00379D",
+    "d2_RGB": 10
+  },
+  "scope_note": "PASS applies to the recorded SVG/CSS #RRGGBB fill/stroke fixture, not every Inkscape colour mechanism, version, platform, export path, device profile or physical output."
+}

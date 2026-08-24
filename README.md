@@ -19,9 +19,9 @@ ATLAS Clarus has now been exercised in multiple open creative applications:
 
 | Application | Current public status | Evidence boundary |
 |---|---|---|
-| **Inkscape** | Validated prototype milestone | Real runtime / save-roundtrip evidence is documented for the v0.3.0 prototype. |
+| **Inkscape** | Installable frozen baseline | v0.3.0 real-runtime and save-roundtrip package is published with manifest and checksums. |
 | **GIMP** | Runtime pass reported | Current evidence includes a GIMP 3.2.4 runtime-pass announcement; a machine-readable validation package should be published separately. |
-| **Krita** | Integration present | Application use is part of the current project state; a dedicated validation package should be published before claiming an independently reproducible runtime pass. |
+| **Krita** | Installable frozen baseline | v0.3.4 validated-prototype package is published with runtime evidence, manifest and checksums. |
 
 This is an **application-integration milestone**, not a claim of physical print validation, device qualification, external certification or production approval.
 
@@ -133,3 +133,4 @@ The original starter README, setup recommendation and checksum inventory are ret
 ## Installable application integrations
 
 - [Krita v0.3.4 — frozen validated-prototype baseline](integrations/krita/v0.3.4/)
+- [Inkscape v0.3.0 — frozen validated-prototype baseline](integrations/inkscape/v0.3.0/)
