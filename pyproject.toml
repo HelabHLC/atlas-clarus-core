@@ -9,5 +9,10 @@ description = "Deterministic RGB-only binding core for ATLAS Clarus"
 requires-python = ">=3.10"
 dependencies = ["pandas>=2.0"]
 
+[project.optional-dependencies]
+test = [
+  "jsonschema>=4.21,<5",
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]
