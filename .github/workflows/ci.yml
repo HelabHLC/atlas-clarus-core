@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-contract:
+    name: Public contract (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e '.[test]'
+      - name: Run deterministic core and schema tests
+        run: python -m unittest discover -s tests -v
+
+  real-master-contract:
+    name: Verified real-master contract
+    if: ${{ vars.ATLAS_CLARUS_REAL_MASTER_GATE == 'enabled' }}
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -e '.[test]'
+      - name: Require configured master path
+        run: test -n "$ATLAS_CLARUS_MASTER_PATH" && test -f "$ATLAS_CLARUS_MASTER_PATH"
+        env:
+          ATLAS_CLARUS_MASTER_PATH: ${{ vars.ATLAS_CLARUS_MASTER_PATH }}
+      - name: Run hash-bound real-master regressions
+        run: python -m unittest tests.test_real_master -v
+        env:
+          ATLAS_CLARUS_MASTER_PATH: ${{ vars.ATLAS_CLARUS_MASTER_PATH }}
