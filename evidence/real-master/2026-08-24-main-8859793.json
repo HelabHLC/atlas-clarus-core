@@ -1,0 +1,28 @@
+{
+  "schema_id": "ATLAS_CLARUS_VERIFIED_REAL_MASTER_GATE_V1",
+  "executed_utc": "2026-08-24T12:10:07Z",
+  "repository": "HelabHLC/atlas-clarus-core",
+  "git_commit": "885979347b95633c5ccb4995be6b526ec3e541a6",
+  "workflow_version": "3.4.0",
+  "master": {
+    "canonical_filename": "atlas_master__active_master__v2_illumext.pkl",
+    "sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+    "size_bytes": 9741473,
+    "rows": 13283,
+    "columns": 114,
+    "byte_identity_crosscheck": "PASS"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39"
+  },
+  "command": "python -m unittest discover -s tests -v",
+  "tests_run": 23,
+  "tests_passed": 23,
+  "tests_failed": 0,
+  "tests_skipped": 0,
+  "posthoc_real_master_matrix": "PASS",
+  "active_two_id_regression": "PASS",
+  "result": "PASS",
+  "scope": "Software and master-contract regression evidence only. Not application runtime, cross-system reproduction, device qualification, physical measurement, production approval, or certification."
+}
