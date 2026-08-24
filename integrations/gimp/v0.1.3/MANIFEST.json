@@ -1,0 +1,60 @@
+{
+  "release": {
+    "name": "ATLAS Clarus for GIMP",
+    "version": "0.1.3",
+    "release_class": "VALIDATED_PROTOTYPE_BASELINE",
+    "freeze_status": "FROZEN",
+    "freeze_date": "2026-08-24"
+  },
+  "runtime": {
+    "application": "GIMP",
+    "version": "3.2.4",
+    "platform": "Windows",
+    "plugin_registration": "PASS",
+    "document_pixel_execution": "PASS",
+    "operator_returned_record": true
+  },
+  "normative_basis": {
+    "workflow": "ATLAS Clarus v3.4.0",
+    "identity_space": "documented 8-bit non-linear sRGB",
+    "distance": "integer squared Euclidean RGB",
+    "K": "UNLIMITED",
+    "tie_break": "smaller engineering atlas_row_id",
+    "Lab_in_identity_selection": false,
+    "DeltaE_in_identity_selection": false,
+    "ICC_in_identity_selection": false
+  },
+  "reference": {
+    "bundled_representation": "atlas_master_rows.json.gz",
+    "bundled_gzip_sha256": "85d33c5876bd80dec2b6e358470a76e7205c5f7117f4c3c0fa2019e99f727194",
+    "rows": 13283,
+    "upstream_active_master": "atlas_master__active_master__v2_illumext.pkl",
+    "upstream_master_sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
+  },
+  "validated_fixture": {
+    "document_xy": [548, 1040],
+    "input_condition": "RGB · U8 non-linear · GIMP built-in sRGB",
+    "source_rgb": [61, 123, 25],
+    "source_hex": "#3D7B19",
+    "reference": "H130_L045_C055",
+    "source_atlas_row_id": 4966,
+    "pkl_rgb": [55, 121, 26],
+    "pkl_hex": "#37791A",
+    "d2_RGB": 41,
+    "freeze_status": "FROZEN",
+    "independent_master_recalculation": "PASS"
+  },
+  "validation_status": {
+    "ZIP_INTEGRITY": "PASS",
+    "PLUGIN_REGISTRATION": "PASS",
+    "PYTHON_SYNTAX": "PASS",
+    "MASTER_ROWS_13283": "PASS",
+    "DOCUMENT_PIXEL_PROFILE_GATE": "PASS",
+    "DOCUMENT_PIXEL_EXTRACTION": "PASS",
+    "RGB_ONLY_BINDING": "PASS",
+    "SOURCE_IDENTITY_FREEZE": "PASS",
+    "INDEPENDENT_RECALCULATION": "PASS",
+    "MEASURED_QC": "NOT_MEASURED"
+  },
+  "scope_note": "PASS applies to the recorded GIMP 3.2.4 Windows document-pixel fixture. It is not universal compatibility, device qualification, production approval, physical measurement or external certification."
+}

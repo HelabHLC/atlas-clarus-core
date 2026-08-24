@@ -40,9 +40,15 @@ measured_qc_status = NOT_MEASURED
 
 ## GIMP
 
-**Current status:** runtime pass reported; reproducibility package pending.
+**Current status:** installable frozen validated-prototype baseline v0.1.3.
 
-The current evidence identifies GIMP 3.2.4, deterministic `d²_RGB` matching, frozen source identity and a runtime pass. Independent reproduction still requires the exact integration package, source fixture, expected binding, machine-readable runtime record, application/platform record, limitations and checksums.
+The public package is available at [`integrations/gimp/v0.1.3/`](../integrations/gimp/v0.1.3/) with the recovered original plugin, runtime record, independent recalculation, installation instructions, manifest, limitations, licence boundary and checksums.
+
+Recorded GIMP 3.2.4 Windows document-pixel fixture:
+
+`XY 548,1040 → #3D7B19 → H130_L045_C055 → row 4966 → #37791A → d²RGB 41 → FROZEN`
+
+PASS is limited to the recorded RGB/U8 non-linear/built-in-sRGB runtime path.
 
 ## Krita
 

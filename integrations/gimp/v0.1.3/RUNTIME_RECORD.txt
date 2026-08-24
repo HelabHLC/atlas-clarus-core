@@ -1,0 +1,26 @@
+ATLAS Clarus · GIMP Engineering Beta v0.1.3
+
+Recognised input: GIMP merged document pixel
+Document XY: 548, 1040
+Input condition: RGB · U8 non-linear · GIMP built-in sRGB
+Source RGB: 61, 123, 25
+Source HEX: #3D7B19
+
+PKL reference: H130_L045_C055
+source_atlas_row_id: 4966
+PKL RGB: 55, 121, 26
+PKL HEX: #37791A
+d²_RGB: 41
+Freeze status: FROZEN
+
+Mode: RGB_ONLY_DLambda_POSTHOC
+production_atlas_row_id = source_atlas_row_id
+measured_qc_status = NOT_MEASURED
+
+Identity first. Production feasibility second.
+Device values third. Measured QC last.
+
+Evidence provenance:
+- Executed by the project operator in the installed GIMP 3.2.4 Windows runtime.
+- Returned verbatim for freeze on 2026-08-24.
+- Independently recalculated against the recovered bundled master: PASS.

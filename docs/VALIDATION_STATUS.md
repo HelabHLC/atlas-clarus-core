@@ -22,7 +22,7 @@ A pass at one level does not imply a pass at the next level.
 | Application | Public package | Source fixture | Runtime | Persistence / roundtrip | Cross-system | DEVICE | Measured QC |
 |---|---|---|---|---|---|---|---|
 | Inkscape v0.3.0 | Published frozen baseline | Documented | PASS | PASS | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
-| GIMP 3.2.4 | Pending | Supporting evidence exists | PASS reported | NOT EVIDENCED | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
+| GIMP 3.2.4 / plug-in v0.1.3 | Published frozen baseline | Documented | PASS | Runtime record published | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
 | Krita v0.3.4 | Published frozen baseline | Documented | PASS | PASS evidence package | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
 
 ## Inkscape evidence note
@@ -37,11 +37,11 @@ The earlier four-gate source-fixture manifest remains separate from the real-run
 
 ## GIMP evidence note
 
-A project announcement records a GIMP 3.2.4 runtime pass and deterministic `d²_RGB` binding with frozen source identity. A machine-readable runtime manifest and exact installable package have not yet been published.
+The published [GIMP v0.1.3 frozen package](../integrations/gimp/v0.1.3/) preserves the recovered original plugin and records the GIMP 3.2.4 Windows document-pixel runtime pass:
 
-Recommended public wording:
+`XY 548,1040 → #3D7B19 → H130_L045_C055 → row 4966 → #37791A → d²RGB 41 → FROZEN`
 
-> **Runtime pass reported — reproducibility package pending.**
+Independent recalculation against the exact bundled 13,283-row master reproduced every value: PASS.
 
 ## Krita evidence note
 

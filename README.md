@@ -20,7 +20,7 @@ ATLAS Clarus has now been exercised in multiple open creative applications:
 | Application | Current public status | Evidence boundary |
 |---|---|---|
 | **Inkscape** | Installable frozen baseline | v0.3.0 real-runtime and save-roundtrip package is published with manifest and checksums. |
-| **GIMP** | Runtime pass reported | Current evidence includes a GIMP 3.2.4 runtime-pass announcement; a machine-readable validation package should be published separately. |
+| **GIMP** | Installable frozen baseline | v0.1.3 GIMP 3.2.4 Windows document-pixel runtime package is published with manifest and checksums. |
 | **Krita** | Installable frozen baseline | v0.3.4 validated-prototype package is published with runtime evidence, manifest and checksums. |
 
 This is an **application-integration milestone**, not a claim of physical print validation, device qualification, external certification or production approval.
@@ -134,3 +134,4 @@ The original starter README, setup recommendation and checksum inventory are ret
 
 - [Krita v0.3.4 — frozen validated-prototype baseline](integrations/krita/v0.3.4/)
 - [Inkscape v0.3.0 — frozen validated-prototype baseline](integrations/inkscape/v0.3.0/)
+- [GIMP v0.1.3 — frozen validated-prototype baseline](integrations/gimp/v0.1.3/)

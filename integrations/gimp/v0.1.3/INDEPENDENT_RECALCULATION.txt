@@ -1,0 +1,13 @@
+Input: RGB 61,123,25 / #3D7B19
+Reference rows searched: 13,283
+Metric: integer squared Euclidean RGB
+Tie-break: smaller engineering atlas_row_id
+
+Calculated result:
+- reference: H130_L045_C055
+- atlas_row_id: 4966
+- RGB: 55,121,26
+- HEX: #37791A
+- d²_RGB: 41
+
+INDEPENDENT_MASTER_RECALCULATION = PASS
