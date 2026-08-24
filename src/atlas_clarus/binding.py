@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import ast
 import hashlib
+import math
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
@@ -18,6 +19,7 @@ import pandas as pd
 EXPECTED_MASTER_FILENAME = "atlas_master__active_master__v2_illumext.pkl"
 EXPECTED_MASTER_SHA256 = "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
 EXPECTED_MASTER_ROWS = 13_283
+DELTA_LAMBDA_TOLERANCE_NM = 0.001
 
 POSTHOC_MODE = "RGB_ONLY_DLambda_POSTHOC"
 ACTIVE_MODE = "RGB_ONLY_DLambda_ACTIVE_PRODUCTION_SELECTION"
@@ -93,6 +95,28 @@ class AtlasMaster:
             raise MasterValidationError("References must be present and unique")
         for value in self.frame["rgb"]:
             _rgb_tuple(value)
+        for row_id, row in self.frame.iterrows():
+            try:
+                lambda_v2 = float(row["lambda_v2_nm"])
+                lambda_ee = float(row["lambda_ee_nm"])
+                delta_lambda = float(row["delta_lambda_nm"])
+            except (TypeError, ValueError) as error:
+                raise MasterValidationError(
+                    f"Non-numeric lambda value at atlas_row_id {row_id}"
+                ) from error
+            if not all(math.isfinite(value) for value in (lambda_v2, lambda_ee, delta_lambda)):
+                raise MasterValidationError(
+                    f"Non-finite lambda value at atlas_row_id {row_id}"
+                )
+            expected_delta = lambda_v2 - lambda_ee
+            if not math.isclose(
+                delta_lambda, expected_delta, rel_tol=0.0,
+                abs_tol=DELTA_LAMBDA_TOLERANCE_NM,
+            ):
+                raise MasterValidationError(
+                    "delta_lambda_nm mismatch at atlas_row_id "
+                    f"{row_id}: expected {expected_delta}, got {delta_lambda}"
+                )
         if require_frozen_contract:
             if len(self.frame) != EXPECTED_MASTER_ROWS:
                 raise MasterValidationError(
@@ -184,4 +208,3 @@ class AtlasBinder:
             production_delta_lambda_nm=float(production_row["delta_lambda_nm"]),
             master_sha256=self.master.sha256,
         )
-

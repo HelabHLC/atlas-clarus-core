@@ -15,6 +15,8 @@ The real-master job is deliberately separate. It runs only on a trusted self-hos
 
 This separation prevents the absence of a redistributable master asset from weakening the public contract tests while retaining a defined verified-real-master gate.
 
+The real-master regression matrix is stored in `tests/fixtures/real_master_regressions.json`. It currently covers four POSTHOC bindings (including exact and non-zero nearest matches) and an ACTIVE two-ID change. Master validation also enforces the frozen row count/index, finite λ fields, and `delta_lambda_nm = lambda_v2_nm - lambda_ee_nm` within a documented `0.001 nm` absolute tolerance.
+
 ## Manifest construction
 
 `atlas_clarus.build_run_manifest()` constructs the complete record from one `BindingResult` per processed pixel. It rejects mixed operating modes, non-frozen master hashes, malformed input hashes, and POSTHOC records that alter source identity. Repeated atomic bindings are deduplicated while the two-ID evidence retains exact pixel counts and fractions, Source→Production mapping, production RGB rank, Δλ values, and the selection reason.

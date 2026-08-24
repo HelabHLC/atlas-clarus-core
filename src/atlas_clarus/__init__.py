@@ -2,6 +2,7 @@
 
 from .binding import (
     ACTIVE_MODE,
+    DELTA_LAMBDA_TOLERANCE_NM,
     EXPECTED_MASTER_FILENAME,
     EXPECTED_MASTER_ROWS,
     EXPECTED_MASTER_SHA256,
@@ -15,6 +16,7 @@ from .evidence import EvidenceContractError, build_run_manifest
 
 __all__ = [
     "ACTIVE_MODE",
+    "DELTA_LAMBDA_TOLERANCE_NM",
     "EXPECTED_MASTER_FILENAME",
     "EXPECTED_MASTER_ROWS",
     "EXPECTED_MASTER_SHA256",
