@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:atlas-clarus:schema:canonical-fixture-matrix:1",
+  "title": "ATLAS Clarus Canonical Fixture Matrix v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_id", "workflow_version", "master_sha256", "fixtures", "integration_claims"],
+  "properties": {
+    "schema_id": {"const": "ATLAS_CLARUS_CANONICAL_FIXTURE_MATRIX_V1"},
+    "workflow_version": {"const": "3.4.0"},
+    "master_sha256": {"const": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"},
+    "fixtures": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/fixture"}
+    },
+    "integration_claims": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "rgb": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "integer", "minimum": 0, "maximum": 255}
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "input_rgb", "source_atlas_row_id"],
+      "properties": {
+        "mode": {"enum": ["RGB_ONLY_DLambda_POSTHOC", "RGB_ONLY_DLambda_ACTIVE_PRODUCTION_SELECTION"]},
+        "input_rgb": {"$ref": "#/$defs/rgb"},
+        "source_atlas_row_id": {"type": "integer", "minimum": 0},
+        "production_atlas_row_id": {"type": "integer", "minimum": 0},
+        "source_reference": {"type": "string", "minLength": 1},
+        "source_rgb": {"$ref": "#/$defs/rgb"},
+        "source_rgb_distance_squared": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}
