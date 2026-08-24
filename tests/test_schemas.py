@@ -5,7 +5,12 @@ import unittest
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
-from atlas_clarus import ACTIVE_MODE, AtlasBinder, AtlasMaster
+from dataclasses import replace
+
+from atlas_clarus import (
+    ACTIVE_MODE, EXPECTED_MASTER_SHA256, AtlasBinder, AtlasMaster,
+    build_run_manifest,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,35 +41,19 @@ class EvidenceSchemaTests(unittest.TestCase):
         Draft202012Validator(self.binding_schema).validate(self.binding_record())
 
     def test_complete_active_run_manifest_validates(self):
-        record = self.binding_record()
-        record["master_sha256"] = "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
-        manifest = {
-            "schema_id": "ATLAS_CLARUS_RUN_MANIFEST_V0_1_0",
-            "workflow_version": "3.4.0",
-            "software": {"name": "atlas-clarus-core", "version": "0.1.0"},
-            "input": {"authority": "DOCUMENTED_8_BIT_SRGB", "sha256": "0" * 64},
-            "master": {
-                "filename": "atlas_master__active_master__v2_illumext.pkl",
-                "sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
-                "row_count": 13283,
-            },
-            "operation": {
-                "reference_variant": ACTIVE_MODE,
-                "k": "UNLIMITED",
-                "seed": 42,
-                "delta_lambda_mode": "ACTIVE",
-                "candidate_corridor": "RGB_TOP_2",
-                "candidate_count": 2,
-                "production_reference_selection": "MIN_ABS_DELTA_LAMBDA_THEN_LOWER_ATLAS_ROW_ID",
-                "deltaE_in_selection": False,
-            },
-            "bindings": [record],
-            "layer_status": {
-                "runtime": "PASS", "persistence": "NOT_EVIDENCED",
-                "cross_system": "NOT_EVIDENCED", "device": "NOT_PROVIDED",
-                "measured_qc": "NOT_MEASURED",
-            },
-        }
+        master = AtlasMaster.from_records([
+            {"reference": "SOURCE", "rgb": [10, 10, 10], "lambda_v2_nm": 500, "lambda_ee_nm": 510, "delta_lambda_nm": -10},
+            {"reference": "PRODUCTION", "rgb": [11, 10, 10], "lambda_v2_nm": 500, "lambda_ee_nm": 501, "delta_lambda_nm": -1},
+        ])
+        result = replace(
+            AtlasBinder(master).bind((10, 10, 10), mode=ACTIVE_MODE),
+            master_sha256=EXPECTED_MASTER_SHA256,
+        )
+        manifest = build_run_manifest(
+            [result], input_sha256="0" * 64,
+            software_name="atlas-clarus-core", software_version="0.1.0",
+            layer_status={"runtime": "PASS"},
+        )
         Draft202012Validator(self.run_schema, registry=self.registry).validate(manifest)
 
     def test_active_manifest_rejects_posthoc_corridor(self):

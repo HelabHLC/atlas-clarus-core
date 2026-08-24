@@ -11,6 +11,7 @@ from .binding import (
     BindingResult,
     MasterValidationError,
 )
+from .evidence import EvidenceContractError, build_run_manifest
 
 __all__ = [
     "ACTIVE_MODE",
@@ -22,5 +23,6 @@ __all__ = [
     "AtlasMaster",
     "BindingResult",
     "MasterValidationError",
+    "EvidenceContractError",
+    "build_run_manifest",
 ]
-
