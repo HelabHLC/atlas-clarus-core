@@ -63,20 +63,11 @@ Before calling this independently reproducible, publish:
 
 ## Krita
 
-**Current status:** integration present; dedicated validation package pending.
+**Current status:** validated prototype baseline v0.3.4; frozen installation and evidence package published.
 
-Krita is part of the current ATLAS Clarus open-application scope. A dedicated evidence package should be published before making a stronger claim such as an independently reproducible runtime pass.
+The frozen v0.3.4 package is published at [`integrations/krita/v0.3.4/`](../integrations/krita/v0.3.4/). It includes the installable plugin ZIP, manifest, checksums, validation report and known limitations.
 
-Recommended evidence package:
-
-- application version and platform;
-- integration/package version;
-- source fixture;
-- expected `atlas_row_id`;
-- exact master RGB / HEX;
-- runtime result;
-- persistence / save-roundtrip result where applicable;
-- package and fixture hashes.
+The recorded gates apply to the tested runtime path. The exact Krita application version and universal platform compatibility were not captured in the frozen manifest.
 
 ## Terminology
 

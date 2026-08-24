@@ -25,7 +25,7 @@ A pass at one level does not imply a pass at the next level.
 |---|---|---|---|---|---|---|
 | Inkscape | Documented | PASS reported for prototype | PASS reported | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
 | GIMP | Supporting project evidence exists | PASS reported for GIMP 3.2.4 | NOT EVIDENCED | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
-| Krita | Integration state reported | NOT EVIDENCED in current public package | NOT EVIDENCED | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
+| Krita | Documented | PASS — v0.3.4 frozen baseline | PASS evidence package published | NOT EVIDENCED | NOT PROVIDED | NOT_MEASURED |
 
 ## Inkscape evidence note
 
@@ -52,11 +52,9 @@ Therefore the recommended public wording is:
 
 ## Krita evidence note
 
-Krita is part of the current integration milestone, but a dedicated machine-readable runtime validation package was not located in the current evidence set used to prepare this GitHub starter package.
+The public v0.3.4 frozen package records plugin discovery, enablement, load, UI runtime, canvas click capture, Document.pixelData read, sampler cross-check, deterministic RGB-only binding, source identity freeze, full-master access to 13,283 rows and blank-search full-master behaviour as PASS.
 
-Therefore the recommended public wording is:
-
-> **Integration present — dedicated validation package pending.**
+The package is published under [`integrations/krita/v0.3.4/`](../integrations/krita/v0.3.4/). Its scope remains a tested validated-prototype baseline, not universal Krita compatibility, DEVICE qualification or measured QC.
 
 ## Physical measurement boundary
 

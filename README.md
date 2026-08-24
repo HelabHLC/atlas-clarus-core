@@ -128,3 +128,8 @@ Archive SHA-256:
 `ce526b3d7ef5209d89930b44ac7724993edbbb3b104fd7964ce4387f4807452a`
 
 The original starter README, setup recommendation and checksum inventory are retained under `docs/archive/`. Their recommendation to create a separate `atlas-clarus` repository is historical and has been superseded by publication through this repository.
+
+
+## Installable application integrations
+
+- [Krita v0.3.4 — frozen validated-prototype baseline](integrations/krita/v0.3.4/)

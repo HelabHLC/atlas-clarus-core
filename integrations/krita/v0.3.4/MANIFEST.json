@@ -1,0 +1,59 @@
+{
+  "release": {
+    "name": "ATLAS Clarus \u00d7 Krita",
+    "version": "0.3.4",
+    "release_class": "VALIDATED_PROTOTYPE_BASELINE",
+    "freeze_status": "FROZEN",
+    "freeze_date": "2026-08-24",
+    "future_branch": "v0.3.5+ / v0.4.x"
+  },
+  "runtime_validation": {
+    "KRITA_PLUGIN_DISCOVERY": "PASS",
+    "KRITA_PLUGIN_ENABLED": "PASS",
+    "KRITA_PLUGIN_LOAD": "PASS",
+    "ATLAS_CLARUS_UI_RUNTIME": "PASS",
+    "CANVAS_CLICK_CAPTURE": "PASS",
+    "DOCUMENT_PIXELDATA_READ": "PASS",
+    "CANVAS_SAMPLER_CROSSCHECK": "PASS",
+    "RGB_ONLY_PKL_BINDING": "PASS",
+    "SOURCE_IDENTITY_FREEZE": "PASS",
+    "FULL_MASTER_13283": "PASS",
+    "SEARCH_SCOPE": "FULL_MASTER",
+    "FULL_MASTER_UI_ACCESS": "PASS",
+    "BLANK_SEARCH_RETURNS": "ALL_MASTER_ROWS / PASS",
+    "MEASURED_QC": "NOT_MEASURED"
+  },
+  "validated_pixel": {
+    "xy": [
+      659,
+      479
+    ],
+    "source_rgb": [
+      242,
+      226,
+      214
+    ],
+    "source_hex": "#F2E2D6",
+    "reference": "H050_L090_C010",
+    "atlas_row_id": 1660,
+    "pkl_rgb": [
+      243,
+      223,
+      212
+    ],
+    "pkl_hex": "#F3DFD4",
+    "d2_RGB": 14
+  },
+  "master": {
+    "rows": 13283,
+    "sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
+  },
+  "method": {
+    "workflow": "ATLAS Clarus Workflow v3.4.0",
+    "mode": "RGB_ONLY_DLambda_POSTHOC",
+    "K": "UNLIMITED",
+    "source": "Document.pixelData",
+    "sampler_role": "independent coordinate/source cross-check"
+  },
+  "scope_note": "Validation applies to the tested Krita v0.3.4 runtime path and full-master UI behavior; it is not physical measurement or universal Krita compatibility."
+}

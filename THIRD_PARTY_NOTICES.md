@@ -22,8 +22,8 @@ ICC profiles and FOGRA reference material may have their own distribution terms.
 
 Do not add them to a public repository until redistribution rights have been checked.
 
-## ATLAS Clarus code/content licence
+## ATLAS Clarus software licence
 
-No new project-wide licence is declared by this starter package.
+ATLAS Clarus software code in this repository is published under the MIT License; see [`LICENSE`](LICENSE).
 
-A repository licence should be selected only after the owner confirms which parts are intended to be open-source, open-data, documentation-only or proprietary.
+This licence does not relicense third-party reference data, ICC profiles, FOGRA material or other upstream assets. Application-specific data notices remain authoritative for bundled reference material.
