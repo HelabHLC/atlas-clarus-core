@@ -17,9 +17,10 @@ The result was independently recalculated against the exact bundled 13,283-row r
 ## Contents
 
 - `01_ORIGINAL_PLUGIN/` — byte-identical ZIP recovered from the working GIMP installation
-- `02_RUNTIME_EVIDENCE/` — operator-returned runtime record, independent recalculation and menu screenshot
+- `02_RUNTIME_EVIDENCE/` — operator-returned runtime record and independent recalculation
 - `03_DOCUMENTATION/` — installation, validation report, limitations and licence/data boundary
 - `MANIFEST.json` — machine-readable release metadata
 - `SHA256SUMS.txt` — SHA-256 inventory
 
 Do not silently modify v0.1.3. Future development belongs to a new version and must be regression-tested against this baseline.
+824954e620ad0ed715a466c271c810eeb878530c
