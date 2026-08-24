@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://atlas-clarus.example/schemas/binding-record-v0.1.0.json",
+  "$id": "urn:atlas-clarus:schema:binding-record:0.1.0",
   "title": "ATLAS Clarus Binding Record v0.1.0",
+  "description": "Atomic evidence for one deterministic source/production binding. This is not a complete workflow run manifest.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -42,7 +43,12 @@
     "production_rgb": {"$ref": "#/$defs/rgb"},
     "source_delta_lambda_nm": {"type": "number"},
     "production_delta_lambda_nm": {"type": "number"},
-    "master_sha256": {"type": "string"},
+    "master_sha256": {
+      "anyOf": [
+        {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        {"const": "SYNTHETIC_TEST_MASTER"}
+      ]
+    },
     "deltaE_stage": {"const": "POSTHOC_ONLY"},
     "deltaE_influenced_source_identity": {"const": false},
     "deltaE_influenced_production_selection": {"const": false}
@@ -56,4 +62,3 @@
     }
   }
 }
-
