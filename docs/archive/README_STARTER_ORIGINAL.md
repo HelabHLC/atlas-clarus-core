@@ -1,6 +1,4 @@
-# ATLAS Clarus Core
-
-**Repository role:** Public development core and documented open-tool integration baseline
+# ATLAS Clarus Open Colour Project
 
 **Status:** Public Beta / engineering project  
 **Technical baseline:** ATLAS Clarus Workflow v3.4.0  
@@ -105,26 +103,3 @@ The HelabHLC account also maintains `arbe-lambda`, a separate spectral-analysis 
 External technical criticism and independent reproduction attempts are welcome.
 
 If a result is not supported by a documented fixture, manifest, runtime record or physical measurement, it should be labelled accordingly rather than promoted to a stronger status.
-
-
-## Implemented core structure
-
-This repository also contains the active deterministic reference implementation:
-
-- `src/` — binding implementation;
-- `tests/` — deterministic and regression tests;
-- `schemas/` — machine-readable record definitions;
-- `docs/ATLAS_CLARUS_WORKFLOW_V3_4_0_NORMATIVE_EN.md` — normative English workflow;
-- `docs/MASTER_ASSET_POLICY.md` — master provenance and integrity policy.
-
-The separate live trace/viewer implementation remains available in [`atlas-clarus-trace-live`](https://github.com/HelabHLC/atlas-clarus-trace-live).
-
-## Publication provenance
-
-The open-tool publication material was adapted from `atlas-clarus-github-starter.zip`.
-
-Archive SHA-256:
-
-`ce526b3d7ef5209d89930b44ac7724993edbbb3b104fd7964ce4387f4807452a`
-
-The original starter README, setup recommendation and checksum inventory are retained under `docs/archive/`. Their recommendation to create a separate `atlas-clarus` repository is historical and has been superseded by publication through this repository.
