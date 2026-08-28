@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:atlas-clarus:schema:source-authority-decision:0.1.0",
+  "title": "ATLAS Clarus Source Authority Decision v0.1.0",
+  "description": "Experimental/shadow pre-binding authority decision. Candidate results cannot select source authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id", "router_mode", "case_id", "representations", "evidence_refs",
+    "source_authority", "selected_representation_id", "authority_hold",
+    "route_authorization", "source_atlas_row_id", "source_atlas_display_row_number",
+    "freeze_status", "brand_owner_question", "selection_metrics_used", "measured_qc_status"
+  ],
+  "properties": {
+    "schema_id": {"const": "ATLAS_CLARUS_SOURCE_AUTHORITY_DECISION_V0_1_0"},
+    "router_mode": {"const": "EXPERIMENTAL_SHADOW"},
+    "case_id": {"type": "string", "minLength": 1},
+    "representations": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["record", "sha256"],
+        "properties": {
+          "record": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "source_authority": {"enum": ["UNRESOLVED", "RESOLVED"]},
+    "selected_representation_id": {"type": ["string", "null"]},
+    "authority_hold": {"enum": ["ACTIVE", "INACTIVE"]},
+    "route_authorization": {"enum": ["NOT_AUTHORIZED", "AUTHORIZED"]},
+    "source_atlas_row_id": {"type": "null"},
+    "source_atlas_display_row_number": {"type": "null"},
+    "freeze_status": {"const": "NOT_FROZEN_EXPERIMENTAL"},
+    "brand_owner_question": {"type": "string", "minLength": 1},
+    "selection_metrics_used": {
+      "type": "array",
+      "items": {"type": "string", "not": {"enum": ["DELTA_E", "RGB_DISTANCE", "ATLAS_CANDIDATE", "GAMUT", "DEVICE_VALUES"]}}
+    },
+    "measured_qc_status": {"const": "NOT_MEASURED"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"source_authority": {"const": "UNRESOLVED"}}, "required": ["source_authority"]},
+      "then": {"properties": {
+        "selected_representation_id": {"type": "null"},
+        "authority_hold": {"const": "ACTIVE"},
+        "route_authorization": {"const": "NOT_AUTHORIZED"}
+      }}
+    },
+    {
+      "if": {"properties": {"source_authority": {"const": "RESOLVED"}}, "required": ["source_authority"]},
+      "then": {
+        "properties": {
+          "selected_representation_id": {"type": "string", "minLength": 1},
+          "authority_hold": {"const": "INACTIVE"},
+          "route_authorization": {"const": "AUTHORIZED"},
+          "evidence_refs": {"minItems": 1}
+        }
+      }
+    }
+  ]
+}
