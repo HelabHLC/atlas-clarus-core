@@ -13,6 +13,13 @@ from .binding import (
     MasterValidationError,
 )
 from .evidence import EvidenceContractError, build_run_manifest
+from .authority import (
+    AUTHORITY_ROUTER_MODE,
+    AuthorityContractError,
+    AuthorityResolutionHold,
+    assert_normative_binding_authorized,
+    build_authority_hold_record,
+)
 
 __all__ = [
     "ACTIVE_MODE",
@@ -27,4 +34,9 @@ __all__ = [
     "MasterValidationError",
     "EvidenceContractError",
     "build_run_manifest",
+    "AUTHORITY_ROUTER_MODE",
+    "AuthorityContractError",
+    "AuthorityResolutionHold",
+    "assert_normative_binding_authorized",
+    "build_authority_hold_record",
 ]

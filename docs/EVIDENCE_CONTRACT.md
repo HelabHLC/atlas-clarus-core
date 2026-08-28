@@ -5,6 +5,10 @@ ATLAS Clarus separates two evidence levels:
 - `schemas/binding-record.schema.json` records one atomic deterministic binding.
 - `schemas/run-manifest.schema.json` records a complete Workflow v3.4.0 execution context, including the input and master hashes, operating mode, candidate corridor, selection rule, binding records, and the status of later evidence layers.
 
+An additional pre-binding contract is documented in
+[`EXPERIMENTAL_SOURCE_AUTHORITY_CONTRACT.md`](EXPERIMENTAL_SOURCE_AUTHORITY_CONTRACT.md).
+It remains experimental/shadow and does not alter either v3.4.0 evidence level.
+
 A valid binding record is not by itself proof of a complete v3.4.0 run. Likewise, a runtime `PASS` does not imply persistence, cross-system, device, or measured-QC evidence.
 
 ## CI gates

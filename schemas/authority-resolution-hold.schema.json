@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:atlas-clarus:schema:authority-resolution-hold:0.1.0",
+  "title": "ATLAS Clarus Authority Resolution Hold v0.1.0",
+  "description": "Method-control hold. This is not a production or measured-QC judgement.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id", "router_mode", "case_id", "hold_status", "trigger_record",
+    "locked_actions", "permitted_actions", "release_criteria", "measured_qc_status"
+  ],
+  "properties": {
+    "schema_id": {"const": "ATLAS_CLARUS_AUTHORITY_RESOLUTION_HOLD_V0_1_0"},
+    "router_mode": {"const": "EXPERIMENTAL_SHADOW"},
+    "case_id": {"type": "string", "minLength": 1},
+    "hold_status": {"const": "ACTIVE"},
+    "trigger_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record", "sha256", "condition"],
+      "properties": {
+        "record": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "condition": {"const": "SOURCE_AUTHORITY_UNRESOLVED"}
+      }
+    },
+    "locked_actions": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"enum": ["SOURCE_SELECTION", "ATLAS_ID_ASSIGNMENT", "IDENTITY_FREEZE", "PRODUCTION_ROUTING", "DEVICE_VALUE_GENERATION", "PRODUCTION_JUDGEMENT"]}
+    },
+    "permitted_actions": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"enum": ["EVIDENCE_PRESERVATION", "BRAND_OWNER_REQUEST", "EVIDENCE_INTAKE", "PROVENANCE_AUDIT", "CLARIFICATION", "EXPERIMENTAL_SHADOW_ANALYSIS"]}
+    },
+    "release_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "measured_qc_status": {"const": "NOT_MEASURED"}
+  }
+}
