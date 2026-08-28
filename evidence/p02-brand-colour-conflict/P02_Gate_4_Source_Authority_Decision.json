@@ -1,0 +1,165 @@
+{
+  "record_type": "ATLAS_CLARUS_P02_GATE_4_SOURCE_AUTHORITY_DECISION",
+  "schema_version": "1.0.0",
+  "created_utc": "2026-08-28T15:00:00Z",
+  "workflow_version": "3.4.0",
+  "case_id": "P02",
+  "brand_colour_name": "Northstar Green",
+  "gate": {
+    "id": "P02_GATE_4",
+    "title": "Formal Source-Authority Decision",
+    "execution_status": "EXECUTED",
+    "record_status": "COMPLETE",
+    "decision_status": "SOURCE_AUTHORITY_UNRESOLVED",
+    "purpose": "Determine whether any supplied representation has sufficient provenance and approval evidence to control source identity; candidate proximity is explicitly non-authoritative."
+  },
+  "input_evidence": [
+    {
+      "record": "P02_Gate_1_Recognised_Input_Provenance_Audit.json",
+      "sha256": "52ea71b21455cc3f0434d4647219253c848bc0e4881788f48f51c469b77cf8b1"
+    },
+    {
+      "record": "P02_Gate_2_Representation_Consistency.json",
+      "sha256": "e3f26c41e824f19a922835b37f4f028e2b76d3397f732b91729e59c8518e5f4c"
+    },
+    {
+      "record": "P02_Gate_3_ATLAS_Candidate_Routes.json",
+      "sha256": "5ed287ee9363878f3530b8ee6a24dd38b6185f47245a15aca0333a2aac4f47dd"
+    }
+  ],
+  "governing_rules": [
+    "Source provenance selects the route; a computed result never selects the source authority.",
+    "Lowest colour difference or nearest ATLAS candidate must not be used to infer source identity.",
+    "Identity must be resolved and frozen before production routing or production judgement.",
+    "The Source Authority Router is experimental/shadow in this pilot."
+  ],
+  "representation_decisions": [
+    {
+      "representation_id": "R01",
+      "representation": "Named Colour / Lab 61, -55, 40; D50/2°",
+      "authority_decision": "NOT_ELIGIBLE_FOR_FREEZE",
+      "reason": "An internal-library name and version establish traceability only, not controlling brand approval. No signed approval, governing specification, physical standard, spectral data, or measurement record links this value to the approved brand colour.",
+      "missing_resolution_evidence": [
+        "Brand-owner declaration that the named library record is controlling",
+        "Exact library identity and immutable version/reference identifier",
+        "Approval record linking that record to Northstar Green",
+        "If measurement-derived: physical standard ID, spectral/measurement data and measurement conditions"
+      ]
+    },
+    {
+      "representation_id": "R02",
+      "representation": "Supplied Lab 60, -50, 35; D50/2°",
+      "authority_decision": "NOT_ELIGIBLE_FOR_FREEZE",
+      "reason": "The derivation is unknown and no measurement, governing specification, owner approval, or chain of custody establishes this Lab value as authoritative.",
+      "missing_resolution_evidence": [
+        "Origin and derivation of the Lab triplet",
+        "Measurement or conversion method and complete conditions",
+        "Source document/version and chain of custody",
+        "Brand-owner approval identifying this Lab value as controlling"
+      ]
+    },
+    {
+      "representation_id": "R03",
+      "representation": "Explicit sRGB 0, 166, 81 / #00A651",
+      "authority_decision": "NOT_ELIGIBLE_FOR_FREEZE",
+      "reason": "The colour space and code values are explicit, but the web-system provenance does not establish controlling brand authority and no owner approval identifies this encoding as the master definition.",
+      "missing_resolution_evidence": [
+        "Brand-owner declaration that sRGB IEC 61966-2-1 is controlling",
+        "Signed approval of the exact 8-bit RGB/HEX values",
+        "Governing specification/version and intended scope of use"
+      ]
+    },
+    {
+      "representation_id": "R04",
+      "representation": "HEX #00A651 with undeclared RGB colour space",
+      "authority_decision": "NOT_ELIGIBLE_FOR_FREEZE",
+      "reason": "HEX code values without a declared RGB colour space are not a complete colour definition; no provenance or approval establishes authority.",
+      "missing_resolution_evidence": [
+        "Explicit RGB colour-space/profile declaration",
+        "Encoding rules and bit depth",
+        "Source document/version and chain of custody",
+        "Brand-owner approval identifying this representation as controlling"
+      ]
+    },
+    {
+      "representation_id": "R05",
+      "representation": "CMYK 84, 0, 85, 0 without production condition",
+      "authority_decision": "NOT_ELIGIBLE_FOR_FREEZE",
+      "reason": "Device values without ICC profile, printing condition, substrate and conversion policy are incomplete. CMYK production values do not establish source identity merely by being supplied.",
+      "missing_resolution_evidence": [
+        "ICC output profile or fully documented printing condition",
+        "Substrate, process, ink set and screening details",
+        "Rendering intent and black-point-compensation policy where applicable",
+        "Evidence of the source reference from which the CMYK values were derived",
+        "Brand-owner approval and explicit declaration if this device condition is intended to control"
+      ]
+    },
+    {
+      "representation_id": "R06",
+      "representation": "SVG artwork with explicit sRGB #00A651",
+      "authority_decision": "NOT_ELIGIBLE_FOR_FREEZE",
+      "reason": "The artwork encoding is reproducible but has no approval record or governing provenance demonstrating that the artwork instance, rather than another supplied representation, controls the brand colour.",
+      "missing_resolution_evidence": [
+        "Approved master-artwork identifier and immutable version/hash",
+        "Brand-owner approval linking that artwork to the controlling colour definition",
+        "Statement that embedded/declared sRGB code values govern source identity"
+      ]
+    }
+  ],
+  "referenced_physical_standard": {
+    "description": "Approved physical 2024 sample referenced in the brief",
+    "availability": "NOT_SUPPLIED",
+    "authority_effect": "NONE_UNTIL_EVIDENCED",
+    "missing_resolution_evidence": [
+      "Physical sample identifier and custody/location",
+      "Signed approval and approval date",
+      "Spectral reflectance or verified measurement data",
+      "Instrument, calibration, geometry, illuminant, observer, backing and measurement date",
+      "Acceptance tolerances and intended production conditions"
+    ]
+  },
+  "candidate_result_separation": {
+    "gate_3_candidate_routes_are_non_binding": true,
+    "observed_candidate_internal_ids": [5524, 5522, 5735],
+    "route_divergence_observed": true,
+    "candidate_distance_used_to_choose_authority": false,
+    "statement": "Neither agreement within a route nor proximity to an ATLAS row is provenance. Gate 3 results therefore have no authority-selection effect."
+  },
+  "formal_decision": {
+    "SOURCE_AUTHORITY": "UNRESOLVED",
+    "SELECTED_REPRESENTATION": null,
+    "source_atlas_row_id": null,
+    "source_atlas_display_row_number": null,
+    "FREEZE_STATUS": "NOT_FROZEN_EXPERIMENTAL",
+    "source_freeze_decision": "DEFERRED_PENDING_BRAND_OWNER_EVIDENCE",
+    "production_routing_authorized": false,
+    "production_judgement_authorized": false,
+    "measured_qc_status": "NOT_MEASURED"
+  },
+  "brand_owner_question": {
+    "primary_question_de": "Welche der sechs gelieferten Repräsentationen – oder welcher bislang nicht gelieferte physische beziehungsweise digitale Master – ist die verbindliche Farbdefinition für Northstar Green, und welcher freigegebene Nachweis belegt diese Autorität?",
+    "required_answer_content": [
+      "Eindeutige Benennung genau einer kontrollierenden Quelle oder eine ausdrücklich definierte Hierarchie",
+      "Unveränderliche Quellenkennung, Version und gegebenenfalls Datei-Hash",
+      "Schriftliche Freigabe durch den zuständigen Brand Owner",
+      "Vollständige Farbraum-, Mess- oder Produktionsbedingungen passend zum gewählten Quellentyp",
+      "Geltungsbereich der Freigabe und verbindliche Toleranzen"
+    ],
+    "conditional_follow_up_de": {
+      "physical_standard": "Wenn das physische 2024-Muster kontrolliert: Bitte Muster-ID, Standort/Chain of Custody, Spektral- oder Messdaten, Messgeometrie, Illuminant/Beobachter, Instrument/Kalibrierung, Messdatum und unterzeichnete Freigabe liefern.",
+      "lab": "Wenn ein Lab-Wert kontrolliert: Bitte exakten Wert, Weißpunkt/Beobachter, Herkunft beziehungsweise Mess- oder Umrechnungsmethode, Quelldokument-Version und unterzeichnete Freigabe bestätigen.",
+      "srgb_or_artwork": "Wenn sRGB oder Artwork kontrolliert: Bitte sRGB IEC 61966-2-1, die exakten 8-Bit-RGB/HEX-Werte, die maßgebliche Datei samt Version/Hash und die unterzeichnete Freigabe bestätigen.",
+      "named_library": "Wenn der Named-Colour-Eintrag kontrolliert: Bitte Bibliothek, unveränderliche Version/Datensatz-ID und die Freigabe dieses Datensatzes als Brand Master angeben.",
+      "cmyk": "Wenn CMYK ausdrücklich kontrollieren soll: Bitte ICC-Profil beziehungsweise Druckbedingung, Substrat, Prozess, Inkset, Rendering-Regeln, maßgebliche Referenz und Freigabe liefern; die Geräteabhängigkeit ist ausdrücklich zu bestätigen."
+    }
+  },
+  "prohibited_inferences": [
+    "Do not select R01, R02, R03 or R06 because its ATLAS candidate has the smallest colour difference.",
+    "Do not treat the R03/R06 numeric match as proof of brand authority.",
+    "Do not infer that the named-colour library supersedes owner approval.",
+    "Do not invent an RGB space for R04 or production conditions for R05.",
+    "Do not assign or freeze any ATLAS row until authority evidence is resolved."
+  ],
+  "next_permitted_action": "Obtain and audit the Brand Owner response and supporting evidence; only then may a separate source-authority resolution and freeze record be created.",
+  "result": "P02 Gate 4 is complete as a formal unresolved-authority decision. No representation and no ATLAS candidate is frozen."
+}

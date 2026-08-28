@@ -1,0 +1,190 @@
+{
+  "record_type": "ATLAS_CLARUS_RECOGNISED_INPUT_PROVENANCE_AUDIT",
+  "pilot": "ATLAS Clarus — Butterfly Industry Validation Pilot",
+  "case_id": "P02",
+  "gate": 1,
+  "record_timestamp_utc": "2026-08-28T09:13:39Z",
+  "gate_status": "PASS_AS_INPUT_AUDIT",
+  "package": {
+    "package_id": "ATLAS_CLARUS_P02_NORTHSTAR_GREEN_V1",
+    "package_version": "1.0.0",
+    "zip_file": "P02_Brand_Colour_Conflict_Test_Package_v1.0.0.zip",
+    "zip_sha256": "f4b3910ec720cdec309f9e843cc19543befae4ddadbb666c3dd950d4af46fd8c",
+    "package_hash_manifest_sha256": "02d3b608d0b10b084f329107f797f2070f4e1452538328ab8b7401866c7a1141",
+    "individual_file_hash_check": "PASS",
+    "recognised_representation_count": 6
+  },
+  "claimed_identity": {
+    "brand": "Northstar (fictional)",
+    "claimed_colour_name": "Northstar Green",
+    "claim": "All six supplied representations allegedly describe the same brand colour.",
+    "claim_verified": false
+  },
+  "recognised_inputs": [
+    {
+      "representation_id": "P02-R01",
+      "recognised_type": "NAMED_COLOUR_WITH_CIELAB_VALUES",
+      "name": "Northstar Green",
+      "values": {
+        "L_star": 61.0,
+        "a_star": -55.0,
+        "b_star": 40.0,
+        "white_point": "D50",
+        "observer": "2_DEGREE"
+      },
+      "provenance": "Internal brand library export",
+      "library_version": "v2",
+      "spectral_data": "NOT_SUPPLIED",
+      "approval_record": "NOT_SUPPLIED",
+      "authority_claim": "PREFERRED_INTERNAL_LIBRARY_ENTRY",
+      "authority_evidence": "NOT_SUPPLIED",
+      "later_candidate_route": "EXPERIMENTAL_LAB_SHADOW",
+      "route_at_gate_1": "NOT_EXECUTED"
+    },
+    {
+      "representation_id": "P02-R02",
+      "recognised_type": "CIELAB",
+      "name": "Northstar Green",
+      "values": {
+        "L_star": 60.0,
+        "a_star": -50.0,
+        "b_star": 35.0,
+        "white_point": "D50",
+        "observer": "2_DEGREE"
+      },
+      "provenance": "Supplier specification sheet",
+      "derivation": "UNKNOWN",
+      "measurement_file": "NOT_SUPPLIED",
+      "approval_record": "NOT_SUPPLIED",
+      "authority_claim": "APPROVED_LAB_TARGET",
+      "authority_evidence": "NOT_SUPPLIED",
+      "later_candidate_route": "EXPERIMENTAL_LAB_SHADOW",
+      "route_at_gate_1": "NOT_EXECUTED"
+    },
+    {
+      "representation_id": "P02-R03",
+      "recognised_type": "SRGB",
+      "name": "Northstar Green",
+      "values": {
+        "R": 0,
+        "G": 166,
+        "B": 81,
+        "HEX": "#00A651",
+        "bit_depth_per_channel": 8,
+        "rgb_space": "sRGB IEC 61966-2-1"
+      },
+      "provenance": "Web design-system export",
+      "embedded_icc_in_csv": false,
+      "semantic_space_declaration_present": true,
+      "authority_claim": "APPROVED_DIGITAL_VALUE",
+      "authority_evidence": "NOT_SUPPLIED",
+      "later_candidate_route": "NORMATIVE_V3_4_0_RGB_CANDIDATE_ROUTE_IF_EVALUATED_SEPARATELY",
+      "route_at_gate_1": "NOT_EXECUTED"
+    },
+    {
+      "representation_id": "P02-R04",
+      "recognised_type": "HEX",
+      "name": "Northstar Green",
+      "values": {
+        "HEX": "#00A651"
+      },
+      "provenance": "Brand portal text field",
+      "rgb_space": "NOT_DECLARED",
+      "authority_claim": "OFFICIAL_HEX",
+      "authority_evidence": "NOT_SUPPLIED",
+      "later_candidate_route": "BLOCKED_UNTIL_RGB_SPACE_OR_SOURCE_RULE_IS_DECLARED",
+      "route_at_gate_1": "NOT_EXECUTED"
+    },
+    {
+      "representation_id": "P02-R05",
+      "recognised_type": "CMYK",
+      "name": "Northstar Green",
+      "values": {
+        "C_percent": 84,
+        "M_percent": 0,
+        "Y_percent": 85,
+        "K_percent": 0
+      },
+      "provenance": "Legacy printer handoff",
+      "icc_profile": "NOT_SUPPLIED",
+      "printing_condition": "NOT_DECLARED",
+      "substrate": "NOT_DECLARED",
+      "rendering_intent": "NOT_DECLARED",
+      "black_point_compensation": "NOT_DECLARED",
+      "authority_claim": "STANDARD_PRINT_BUILD",
+      "authority_evidence": "NOT_SUPPLIED",
+      "later_candidate_route": "PRODUCTION_REPRESENTATION_ONLY_BLOCKED_WITHOUT_NAMED_CONDITION",
+      "route_at_gate_1": "NOT_EXECUTED"
+    },
+    {
+      "representation_id": "P02-R06",
+      "recognised_type": "ARTWORK_SAMPLE_SVG_WITH_EXPLICIT_SRGB",
+      "name": "Northstar Green",
+      "values": {
+        "R": 0,
+        "G": 166,
+        "B": 81,
+        "HEX": "#00A651",
+        "rgb_space": "sRGB"
+      },
+      "provenance": "Agency artwork sample",
+      "svg_color_interpolation": "sRGB",
+      "svg_swatch_fill": "#00A651",
+      "metadata_source_representation": "SRGB",
+      "approval_record": "NOT_SUPPLIED",
+      "authority_claim": "CURRENT_APPROVED_ARTWORK",
+      "authority_evidence": "NOT_SUPPLIED",
+      "later_candidate_route": "NORMATIVE_V3_4_0_RGB_CANDIDATE_ROUTE_IF_EVALUATED_SEPARATELY",
+      "route_at_gate_1": "NOT_EXECUTED"
+    }
+  ],
+  "cross_representation_observations": {
+    "r03_srgb_matches_r06_artwork_numeric_values": true,
+    "r03_srgb_matches_r04_hex_text": true,
+    "numeric_agreement_proves_authority": false,
+    "named_colour_label_proves_equivalence": false,
+    "library_version_v2_proves_authority": false,
+    "word_approved_proves_authority": false,
+    "cmyk_can_be_compared_device_independently_without_condition": false
+  },
+  "referenced_but_missing_physical_target": {
+    "claim": "Approved physical brand sample from 2024",
+    "physical_sample_supplied": false,
+    "measurement_data_supplied": false,
+    "measurement_condition_supplied": false,
+    "signed_approval_record_supplied": false,
+    "usable_as_measured_authority": false
+  },
+  "source_authority_decision": {
+    "source_authority": "UNRESOLVED",
+    "reason": "MULTIPLE_CONFLICTING_AUTHORITY_CLAIMS_WITHOUT_CONTROLLING_APPROVAL_OR_PROVENANCE_EVIDENCE",
+    "selected_representation": null,
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "lowest_delta_e_used_to_choose_authority": false,
+    "result_used_to_choose_source": false
+  },
+  "execution_boundaries": {
+    "atlas_lookup_executed": false,
+    "lab_candidate_lookup_executed": false,
+    "rgb_candidate_lookup_executed": false,
+    "cmyk_conversion_executed": false,
+    "production_feasibility_executed": false,
+    "device_values_generated": false,
+    "physical_measurement_executed": false
+  },
+  "status": {
+    "recognised_input": "PASS_SIX_REPRESENTATIONS",
+    "provenance_audit": "COMPLETED",
+    "source_authority": "UNRESOLVED",
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "production_feasibility": "NOT_EXECUTED",
+    "device_values": "NOT_DETERMINED",
+    "measured_qc_status": "NOT_MEASURED"
+  },
+  "evidence_class": {
+    "package_content_and_hashes": "DOCUMENTED_AND_RUNTIME_CONFIRMED",
+    "provenance_fields": "DOCUMENTED_SYNTHETIC_INPUT",
+    "authority_resolution": "OPEN_QUESTION_NOT_EVIDENCED",
+    "physical_qc": "NOT_MEASURED"
+  }
+}

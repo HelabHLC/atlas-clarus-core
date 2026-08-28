@@ -1,0 +1,58 @@
+{
+  "schema_id": "ATLAS_CLARUS_P02_EVIDENCE_PACKAGE_V0_1_0",
+  "case_id": "P02",
+  "case_title": "Northstar Green brand-colour representation conflict",
+  "router_mode": "EXPERIMENTAL_SHADOW",
+  "workflow_baseline": "3.4.0",
+  "package_scope": "SOURCE_AUTHORITY_EVIDENCE_GATES_1_TO_5_ONLY",
+  "records": [
+    {
+      "gate": 1,
+      "filename": "P02_Gate_1_Recognised_Input_Provenance_Audit.json",
+      "sha256": "52ea71b21455cc3f0434d4647219253c848bc0e4881788f48f51c469b77cf8b1",
+      "role": "RECOGNISED_INPUT_AND_PROVENANCE_AUDIT"
+    },
+    {
+      "gate": 2,
+      "filename": "P02_Gate_2_Representation_Consistency.json",
+      "sha256": "e3f26c41e824f19a922835b37f4f028e2b76d3397f732b91729e59c8518e5f4c",
+      "role": "REPRESENTATION_CONFLICT_DETECTION"
+    },
+    {
+      "gate": 3,
+      "filename": "P02_Gate_3_ATLAS_Candidate_Routes.json",
+      "sha256": "5ed287ee9363878f3530b8ee6a24dd38b6185f47245a15aca0333a2aac4f47dd",
+      "role": "NON_BINDING_EXPERIMENTAL_SHADOW_CANDIDATES"
+    },
+    {
+      "gate": 4,
+      "filename": "P02_Gate_4_Source_Authority_Decision.json",
+      "sha256": "9f2dd51739b647a9662ba415d0e6b5830b1dc93e107fcc6979d5ffcb59568755",
+      "role": "FORMAL_UNRESOLVED_AUTHORITY_DECISION"
+    },
+    {
+      "gate": 5,
+      "filename": "P02_Gate_5_Authority_Resolution_Hold.json",
+      "sha256": "e5750e2626125f44a076c540a3615e9604821ae516929a994964ba387dcbc02c",
+      "role": "AUTHORITY_RESOLUTION_HOLD_AND_CONTINUATION_PATH"
+    }
+  ],
+  "final_state": {
+    "source_authority": "UNRESOLVED",
+    "selected_representation": null,
+    "source_atlas_row_id": null,
+    "source_atlas_display_row_number": null,
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "authority_resolution_hold": "ACTIVE",
+    "production_processing": "NOT_AUTHORIZED",
+    "measured_qc_status": "NOT_MEASURED"
+  },
+  "method_boundaries": {
+    "candidate_results_select_source_authority": false,
+    "normative_identity_assigned": false,
+    "binding_implementation_changed": false,
+    "production_logic_included": false,
+    "device_values_generated": false,
+    "physical_measurement_available": false
+  }
+}
