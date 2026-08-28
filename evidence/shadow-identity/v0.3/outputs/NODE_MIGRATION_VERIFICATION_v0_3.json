@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "rows": 13283,
+  "v0_2_digest_mismatches": 0,
+  "v0_3_digest_mismatches": 0,
+  "relation_mismatches": 0,
+  "unique_v0_2_digests": 13283,
+  "unique_v0_3_digests": 13283
+}

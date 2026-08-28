@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atlas-clarus.example/schema/shadow-master-row-v0.3.json",
+  "title": "ATLAS Clarus Shadow Master Row v0.3",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "atlas_master_sha256",
+    "atlas_row_id",
+    "reference",
+    "cxf_object_index",
+    "frozen_identity_digest_v0_3"
+  ],
+  "properties": {
+    "atlas_master_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "atlas_row_id": {"type":"integer","minimum":0},
+    "reference": {"type":"string","pattern":"^H[0-9]{3}_L[0-9]{3}_C[0-9]{3}$"},
+    "cxf_object_index": {"type":"integer","minimum":0},
+    "frozen_identity_digest_v0_3": {"type":"string","pattern":"^[0-9a-f]{64}$"}
+  }
+}
+

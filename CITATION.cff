@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use ATLAS Clarus, please cite this repository and the exact baseline version."
+title: "ATLAS Clarus Core"
+type: software
+version: "0.3-shadow-identity"
+date-released: 2026-08-28
+authors:
+  - family-names: Woiwod
+    given-names: Norbert
+repository-code: "https://github.com/HelabHLC/atlas-clarus-core"
+license: MIT
+keywords:
+  - colour identity
+  - provenance
+  - deterministic binding
+  - spectral colour
+

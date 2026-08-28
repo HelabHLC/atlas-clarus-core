@@ -1,0 +1,68 @@
+{
+  "active_master_modified": false,
+  "active_production_workflow": "3.4.0_UNCHANGED",
+  "aggregate_identity_sha256": "e532055b834700000f3b2b7acf5768bbffc5071a87b9a25062f24b4f3a817989",
+  "artifacts": {
+    "baseline_decision": {
+      "path": "BASELINE_DECISION_v0_3.md",
+      "sha256": "01918e1d69af6349e172d626a6b88f82552bf3fd51033c74668b8b3d55c86863"
+    },
+    "canonical_digest_rule_v0_3": {
+      "path": "bound_artifacts/ATLAS_Clarus_Canonical_Identity_Digest_v0_3.md",
+      "sha256": "f40539a8b72ff45b69d11dc1ca8e899fb38b04c1154759ab486d77a7a63e5dd3"
+    },
+    "changelog": {
+      "path": "CHANGELOG_v0_3.md",
+      "sha256": "4b1e5761babb2e13c4f07dada5008fb73d654cf1623af8f03ea000f010ac5557"
+    },
+    "conformance_report_v0_3": {
+      "path": "bound_artifacts/CONFORMANCE_REPORT_v0_3.json",
+      "sha256": "ab9d08cbcb2c37f1f7a23071927cd63c4d08e3c713229a97fa11e8e8c9ad1b30"
+    },
+    "frozen_identity_schema_v0_3": {
+      "path": "bound_artifacts/atlas_clarus_frozen_identity_v0_3.schema.json",
+      "sha256": "0f7f268a4b9e6386d58fd1a477237910b9a57cfd123e6bb00f2b922e4956136e"
+    },
+    "migration_mapping": {
+      "path": "outputs/identity_digest_migration_v0_2_to_v0_3.csv",
+      "sha256": "0211cc255567dd1bd7cd20d50385d85ea1a483d529f82522532acf2aedb8f502"
+    },
+    "migration_report": {
+      "path": "outputs/MIGRATION_REPORT_v0_2_TO_v0_3.json",
+      "sha256": "0d9af97c8324a0ec12e6511aeedf8e3e1283780ac4b10f1b392b877ed4541599"
+    },
+    "migration_specification": {
+      "path": "MIGRATION_v0_2_TO_v0_3.md",
+      "sha256": "82d76f8736c0c6ebb233cf6834fb4f73ee69bab673adb10c0f0de7d7498a31be"
+    },
+    "node_migration_verification": {
+      "path": "outputs/NODE_MIGRATION_VERIFICATION_v0_3.json",
+      "sha256": "6d033bef976de260075e6816b85e51927857bd80f3dfc9396a4a5afe7f5489ef"
+    },
+    "shadow_master_v0_3": {
+      "path": "bound_artifacts/atlas_clarus_spectral_shadow_master_v0_3.csv",
+      "sha256": "2fc3d9c1ddbed5034e96551a1caf341fec17af6412e0a9ddf12317fff2d60f94"
+    },
+    "shadow_row_schema_v0_3": {
+      "path": "bound_artifacts/atlas_clarus_shadow_master_row_v0_3.schema.json",
+      "sha256": "4230f449c0bb4dea4b5634a25303422086228b269068edd44327862459a8f816"
+    }
+  },
+  "baseline_version": "0.3",
+  "decision_status": "FROZEN",
+  "effective_date": "2026-08-28",
+  "external_inputs": {
+    "active_master": {
+      "filename": "atlas_master__active_master__v2_illumext.pkl",
+      "sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
+    },
+    "cxf_source": {
+      "filename": "HLC-Colour-Atlas-XL_SpectralData_v1-2.cxf",
+      "sha256": "b385b04067eeb7883c3178e37c2b4d0c2f03e24216ad425bc239b139efd75eab"
+    }
+  },
+  "format": "ATLAS_CLARUS_SHADOW_IDENTITY_BASELINE_LOCK",
+  "scope": "PROJECT_INTERNAL_NORMATIVE_SHADOW_IDENTITY",
+  "supersedes": "DIGEST_RULE_V0_2",
+  "supersession_relation": "SUPERSEDES_DIGEST_RULE_V0_2"
+}
