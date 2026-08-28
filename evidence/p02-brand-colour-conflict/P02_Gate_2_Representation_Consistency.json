@@ -1,0 +1,168 @@
+{
+  "record_type": "ATLAS_CLARUS_REPRESENTATION_CONSISTENCY_AUDIT",
+  "pilot": "ATLAS Clarus — Butterfly Industry Validation Pilot",
+  "case_id": "P02",
+  "gate": 2,
+  "record_timestamp_utc": "2026-08-28T09:17:08Z",
+  "gate_status": "PASS_AS_CONFLICT_DETECTION",
+  "input_evidence": {
+    "gate_1_file": "P02_Gate_1_Recognised_Input_Provenance_Audit.json",
+    "gate_1_sha256": "52ea71b21455cc3f0434d4647219253c848bc0e4881788f48f51c469b77cf8b1",
+    "source_authority_at_input": "UNRESOLVED",
+    "freeze_status_at_input": "NOT_FROZEN_EXPERIMENTAL"
+  },
+  "calculation_method": {
+    "lab_reference_white": "D50",
+    "observer": "2_DEGREE",
+    "srgb_source": "IEC_61966_2_1_8_BIT",
+    "srgb_to_d50_xyz_matrix": [
+      [0.4360657, 0.3851477, 0.1430784],
+      [0.2224932, 0.7168731, 0.0606246],
+      [0.0139239, 0.0970813, 0.7140994]
+    ],
+    "d50_white_xyz": [0.9642, 1.0, 0.8249],
+    "comparison_metrics": ["CIE76", "CIEDE2000"],
+    "ciede2000_reference_pair_expected": 2.0425,
+    "ciede2000_reference_pair_calculated": 2.0424596801565764,
+    "ciede2000_implementation_check": "PASS"
+  },
+  "comparable_representations": [
+    {
+      "representation_id": "P02-R01",
+      "type": "NAMED_COLOUR_WITH_CIELAB_VALUES",
+      "lab_d50": [61.0, -55.0, 40.0],
+      "value_origin": "SUPPLIED"
+    },
+    {
+      "representation_id": "P02-R02",
+      "type": "CIELAB",
+      "lab_d50": [60.0, -50.0, 35.0],
+      "value_origin": "SUPPLIED"
+    },
+    {
+      "representation_id": "P02-R03",
+      "type": "SRGB",
+      "source_rgb_8bit": [0, 166, 81],
+      "source_hex": "#00A651",
+      "xyz_d50": [0.15863971433721516, 0.2783507161329355, 0.09577765670546136],
+      "lab_d50": [59.739442412273135, -52.483487943804086, 33.01494779826584],
+      "value_origin": "CALCULATED_FROM_DOCUMENTED_SRGB"
+    },
+    {
+      "representation_id": "P02-R06",
+      "type": "ARTWORK_SAMPLE_SVG_WITH_EXPLICIT_SRGB",
+      "source_rgb_8bit": [0, 166, 81],
+      "source_hex": "#00A651",
+      "xyz_d50": [0.15863971433721516, 0.2783507161329355, 0.09577765670546136],
+      "lab_d50": [59.739442412273135, -52.483487943804086, 33.01494779826584],
+      "value_origin": "CALCULATED_FROM_DOCUMENTED_SRGB_ARTWORK"
+    }
+  ],
+  "pairwise_comparisons": [
+    {
+      "representation_a": "P02-R01",
+      "representation_b": "P02-R02",
+      "delta_Lab_b_minus_a": [-1.0, 5.0, -5.0],
+      "delta_e_76": 7.14142842854285,
+      "delta_e_00": 2.049954978637124,
+      "numerically_identical": false
+    },
+    {
+      "representation_a": "P02-R01",
+      "representation_b": "P02-R03",
+      "delta_Lab_b_minus_a": [-1.2605575877268649, 2.5165120561959142, -6.985052201734163],
+      "delta_e_76": 7.53078964132623,
+      "delta_e_00": 2.6463165533184734,
+      "numerically_identical": false
+    },
+    {
+      "representation_a": "P02-R01",
+      "representation_b": "P02-R06",
+      "delta_Lab_b_minus_a": [-1.2605575877268649, 2.5165120561959142, -6.985052201734163],
+      "delta_e_76": 7.53078964132623,
+      "delta_e_00": 2.6463165533184734,
+      "numerically_identical": false
+    },
+    {
+      "representation_a": "P02-R02",
+      "representation_b": "P02-R03",
+      "delta_Lab_b_minus_a": [-0.2605575877268649, -2.4834879438040858, -1.9850522017341632],
+      "delta_e_76": 3.1899897910733097,
+      "delta_e_00": 1.3724341902314474,
+      "numerically_identical": false
+    },
+    {
+      "representation_a": "P02-R02",
+      "representation_b": "P02-R06",
+      "delta_Lab_b_minus_a": [-0.2605575877268649, -2.4834879438040858, -1.9850522017341632],
+      "delta_e_76": 3.1899897910733097,
+      "delta_e_00": 1.3724341902314474,
+      "numerically_identical": false
+    },
+    {
+      "representation_a": "P02-R03",
+      "representation_b": "P02-R06",
+      "delta_Lab_b_minus_a": [0.0, 0.0, 0.0],
+      "delta_e_76": 0.0,
+      "delta_e_00": 0.0,
+      "numerically_identical": true
+    }
+  ],
+  "formally_excluded_representations": [
+    {
+      "representation_id": "P02-R04",
+      "type": "HEX",
+      "value": "#00A651",
+      "comparison_status": "NOT_CALCULATED",
+      "reason": "RGB_SPACE_NOT_DECLARED",
+      "silent_srgb_assumption_used": false,
+      "conditional_observation": "IF explicitly declared sRGB, the numeric code would match R03 and R06; this condition is not treated as supplied authority."
+    },
+    {
+      "representation_id": "P02-R05",
+      "type": "CMYK",
+      "value_percent": [84, 0, 85, 0],
+      "comparison_status": "NOT_CALCULATED",
+      "reason": "ICC_PROFILE_AND_PRODUCTION_CONDITION_NOT_SUPPLIED",
+      "silent_profile_assumption_used": false,
+      "device_independent_colour_claimed": false
+    }
+  ],
+  "consistency_findings": {
+    "r03_and_r06_exactly_consistent": true,
+    "r01_r02_r03_all_numerically_identical_in_lab": false,
+    "conflicting_descriptions_detected": true,
+    "project_specific_acceptance_tolerance_supplied": false,
+    "pass_watch_review_or_block_assigned": false,
+    "closest_representation_used_as_authority": false,
+    "lowest_delta_e_used_as_authority": false
+  },
+  "authority_state": {
+    "source_authority": "UNRESOLVED",
+    "selected_representation": null,
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "reason": "CONSISTENCY_MEASUREMENT_CANNOT_REPLACE_MISSING_PROVENANCE_AUTHORITY"
+  },
+  "execution_boundaries": {
+    "atlas_lookup_executed": false,
+    "atlas_candidate_assigned": false,
+    "cmyk_conversion_executed": false,
+    "production_feasibility_executed": false,
+    "physical_measurement_executed": false
+  },
+  "status": {
+    "representation_consistency": "CONFLICT_DETECTED",
+    "source_authority": "UNRESOLVED",
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "production_feasibility": "NOT_EXECUTED",
+    "device_values": "NOT_DETERMINED",
+    "measured_qc_status": "NOT_MEASURED"
+  },
+  "evidence_class": {
+    "supplied_lab_values": "DOCUMENTED_SYNTHETIC_INPUT",
+    "srgb_colourimetry_and_pairwise_differences": "CALCULATED_AND_RUNTIME_CONFIRMED",
+    "acceptability": "OPEN_QUESTION_NOT_EVIDENCED",
+    "authority_resolution": "UNRESOLVED",
+    "physical_qc": "NOT_MEASURED"
+  }
+}

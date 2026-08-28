@@ -1,0 +1,181 @@
+{
+  "record_type": "ATLAS_CLARUS_PARALLEL_CANDIDATE_ROUTE_AUDIT",
+  "pilot": "ATLAS Clarus — Butterfly Industry Validation Pilot",
+  "case_id": "P02",
+  "gate": 3,
+  "record_timestamp_utc": "2026-08-28T09:20:19Z",
+  "gate_status": "PASS_AS_SHADOW_CANDIDATE_COMPARISON",
+  "normative_binding_status": "NO_SOURCE_IDENTITY_FROZEN",
+  "input_evidence": {
+    "gate_1_sha256": "52ea71b21455cc3f0434d4647219253c848bc0e4881788f48f51c469b77cf8b1",
+    "gate_2_sha256": "e3f26c41e824f19a922835b37f4f028e2b76d3397f732b91729e59c8518e5f4c",
+    "source_authority_at_input": "UNRESOLVED",
+    "freeze_status_at_input": "NOT_FROZEN_EXPERIMENTAL"
+  },
+  "authoritative_basis": {
+    "workflow": "ATLAS Clarus Workflow v3.4.0",
+    "workflow_sha256": "abeb9085820904aa1e4111c93f3d8d1b02b44c50f8f66b9390fde0d4b3da7810",
+    "master": "atlas_master__active_master__v2_illumext.pkl",
+    "master_sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+    "master_hash_reconfirmed_for_gate_3": true,
+    "valid_master_rows_evaluated": 13283
+  },
+  "route_rules": {
+    "source_decides_route": true,
+    "routes_may_challenge_each_other": true,
+    "results_may_choose_source": false,
+    "lowest_delta_e_may_choose_authority": false,
+    "rgb_route_may_override_lab_source": false,
+    "lab_route_may_override_srgb_source": false
+  },
+  "candidate_routes": [
+    {
+      "representation_id": "P02-R01",
+      "source_type": "NAMED_COLOUR_WITH_CIELAB_VALUES",
+      "source_lab_d50": [61.0, -55.0, 40.0],
+      "route_status": "EXPERIMENTAL_LAB_SHADOW",
+      "delta_e_76_candidate": {
+        "internal_atlas_row_id_0_based": 5524,
+        "display_row_number_1_based": 5525,
+        "reference": "H145_L060_C070",
+        "master_rgb": [0, 168, 67],
+        "master_hex": "#00A843",
+        "master_lab_d50": [60.0, -57.3406, 40.1504],
+        "delta_e_76": 2.5497114581850253
+      },
+      "ciede2000_candidate": {
+        "internal_atlas_row_id_0_based": 5524,
+        "display_row_number_1_based": 5525,
+        "reference": "H145_L060_C070",
+        "master_rgb": [0, 168, 67],
+        "master_hex": "#00A843",
+        "master_lab_d50": [60.0, -57.3406, 40.1504],
+        "delta_e_00": 1.1208408313911715
+      },
+      "challenger_metrics_agree": true,
+      "candidate_freeze_status": "NOT_FROZEN_EXPERIMENTAL"
+    },
+    {
+      "representation_id": "P02-R02",
+      "source_type": "CIELAB",
+      "source_lab_d50": [60.0, -50.0, 35.0],
+      "route_status": "EXPERIMENTAL_LAB_SHADOW",
+      "delta_e_76_candidate": {
+        "internal_atlas_row_id_0_based": 5522,
+        "display_row_number_1_based": 5523,
+        "reference": "H145_L060_C060",
+        "master_rgb": [40, 165, 80],
+        "master_hex": "#28A550",
+        "master_lab_d50": [60.0, -49.1491, 34.4146],
+        "delta_e_76": 1.032823300473031
+      },
+      "ciede2000_candidate": {
+        "internal_atlas_row_id_0_based": 5522,
+        "display_row_number_1_based": 5523,
+        "reference": "H145_L060_C060",
+        "master_rgb": [40, 165, 80],
+        "master_hex": "#28A550",
+        "master_lab_d50": [60.0, -49.1491, 34.4146],
+        "delta_e_00": 0.2774419036687627
+      },
+      "challenger_metrics_agree": true,
+      "candidate_freeze_status": "NOT_FROZEN_EXPERIMENTAL"
+    },
+    {
+      "representation_id": "P02-R03",
+      "source_type": "SRGB",
+      "source_rgb_8bit": [0, 166, 81],
+      "source_hex": "#00A651",
+      "route_status": "V3_4_0_RGB_RULE_EXECUTED_AS_NON_BINDING_CANDIDATE_BECAUSE_AUTHORITY_UNRESOLVED",
+      "rgb_candidate": {
+        "internal_atlas_row_id_0_based": 5735,
+        "display_row_number_1_based": 5736,
+        "reference": "H150_L060_C065",
+        "master_rgb": [0, 168, 82],
+        "master_hex": "#00A852",
+        "master_lab_d50": [60.0, -56.2916, 32.5],
+        "d2_rgb": 5,
+        "d_rgb": 2.23606797749979,
+        "winner_tie_count": 1
+      },
+      "candidate_freeze_status": "NOT_FROZEN_EXPERIMENTAL"
+    },
+    {
+      "representation_id": "P02-R06",
+      "source_type": "ARTWORK_SAMPLE_SVG_WITH_EXPLICIT_SRGB",
+      "source_rgb_8bit": [0, 166, 81],
+      "source_hex": "#00A651",
+      "route_status": "V3_4_0_RGB_RULE_EXECUTED_AS_NON_BINDING_CANDIDATE_BECAUSE_AUTHORITY_UNRESOLVED",
+      "rgb_candidate": {
+        "internal_atlas_row_id_0_based": 5735,
+        "display_row_number_1_based": 5736,
+        "reference": "H150_L060_C065",
+        "master_rgb": [0, 168, 82],
+        "master_hex": "#00A852",
+        "master_lab_d50": [60.0, -56.2916, 32.5],
+        "d2_rgb": 5,
+        "d_rgb": 2.23606797749979,
+        "winner_tie_count": 1
+      },
+      "candidate_freeze_status": "NOT_FROZEN_EXPERIMENTAL"
+    }
+  ],
+  "excluded_routes": [
+    {
+      "representation_id": "P02-R04",
+      "source_type": "HEX",
+      "route_status": "NOT_EXECUTED",
+      "reason": "RGB_SPACE_NOT_DECLARED",
+      "silent_srgb_assumption_used": false
+    },
+    {
+      "representation_id": "P02-R05",
+      "source_type": "CMYK",
+      "route_status": "NOT_EXECUTED",
+      "reason": "ICC_PROFILE_AND_PRODUCTION_CONDITION_NOT_SUPPLIED",
+      "silent_profile_assumption_used": false
+    }
+  ],
+  "route_comparison": {
+    "r01_candidate_internal_id": 5524,
+    "r02_candidate_internal_id": 5522,
+    "r03_candidate_internal_id": 5735,
+    "r06_candidate_internal_id": 5735,
+    "unique_candidate_ids": [5522, 5524, 5735],
+    "r03_r06_candidates_agree": true,
+    "all_comparable_representations_choose_same_candidate": false,
+    "route_divergence": true,
+    "conflict_visible_at_atlas_candidate_layer": true
+  },
+  "authority_state": {
+    "source_authority": "UNRESOLVED",
+    "selected_representation": null,
+    "source_atlas_row_id": null,
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "reason": "CANDIDATE_RESULTS_CANNOT_RESOLVE_CONFLICTING_PROVENANCE_CLAIMS"
+  },
+  "execution_boundaries": {
+    "normative_source_identity_assigned": false,
+    "production_atlas_row_id_assigned": false,
+    "cmyk_conversion_executed": false,
+    "production_feasibility_executed": false,
+    "device_values_generated": false,
+    "physical_measurement_executed": false
+  },
+  "status": {
+    "candidate_routes": "COMPLETED_NON_BINDING",
+    "route_divergence": true,
+    "source_authority": "UNRESOLVED",
+    "freeze_status": "NOT_FROZEN_EXPERIMENTAL",
+    "production_feasibility": "NOT_EXECUTED",
+    "device_values": "NOT_DETERMINED",
+    "measured_qc_status": "NOT_MEASURED"
+  },
+  "evidence_class": {
+    "master_and_route_calculations": "CALCULATED_AND_RUNTIME_CONFIRMED",
+    "lab_candidate_routes": "EXPERIMENTAL_CALCULATED",
+    "srgb_candidate_routes": "NORMATIVE_RULE_USED_AS_NON_BINDING_CANDIDATE",
+    "authority_resolution": "UNRESOLVED",
+    "physical_qc": "NOT_MEASURED"
+  }
+}

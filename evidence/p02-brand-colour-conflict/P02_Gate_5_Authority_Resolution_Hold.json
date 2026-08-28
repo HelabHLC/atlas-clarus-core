@@ -1,0 +1,246 @@
+{
+  "record_type": "ATLAS_CLARUS_P02_GATE_5_AUTHORITY_RESOLUTION_HOLD",
+  "schema_version": "1.0.0",
+  "created_utc": "2026-08-28T15:10:00Z",
+  "workflow_version": "3.4.0",
+  "case_id": "P02",
+  "brand_colour_name": "Northstar Green",
+  "gate": {
+    "id": "P02_GATE_5",
+    "title": "Authority-Resolution Hold and Permitted Continuation Path",
+    "execution_status": "EXECUTED",
+    "record_status": "COMPLETE",
+    "hold_status": "AUTHORITY_RESOLUTION_HOLD_ACTIVE",
+    "scope": "SOURCE_IDENTITY_AND_ALL_DEPENDENT_PRODUCTION_ACTIONS",
+    "clarification": "This hold is a method-control state. It is not a measured QC status and not a production PASS, WATCH, REVIEW or BLOCK judgement."
+  },
+  "trigger_evidence": {
+    "record": "P02_Gate_4_Source_Authority_Decision.json",
+    "sha256": "9f2dd51739b647a9662ba415d0e6b5830b1dc93e107fcc6979d5ffcb59568755",
+    "trigger_condition": "SOURCE_AUTHORITY_UNRESOLVED"
+  },
+  "inherited_state": {
+    "SOURCE_AUTHORITY": "UNRESOLVED",
+    "SELECTED_REPRESENTATION": null,
+    "source_atlas_row_id": null,
+    "source_atlas_display_row_number": null,
+    "FREEZE_STATUS": "NOT_FROZEN_EXPERIMENTAL",
+    "source_freeze_decision": "DEFERRED_PENDING_BRAND_OWNER_EVIDENCE",
+    "production_routing_authorized": false,
+    "production_judgement_authorized": false,
+    "measured_qc_status": "NOT_MEASURED"
+  },
+  "hold_rationale": [
+    "None of R01 through R06 has sufficient approval and provenance evidence to control source identity.",
+    "The referenced approved physical 2024 sample was not supplied and has no auditable measurement or approval record in the package.",
+    "The candidate routes diverge, but route output and colour proximity cannot establish source authority.",
+    "Any freeze before authority resolution would convert an experimental comparison into an unsupported normative identity decision."
+  ],
+  "locked_actions": [
+    {
+      "action": "Select R01, R02, R03, R04, R05 or R06 as Source Authority",
+      "status": "PROHIBITED_WHILE_HOLD_ACTIVE"
+    },
+    {
+      "action": "Assign or freeze source_atlas_row_id or its 1-based display alias",
+      "status": "PROHIBITED_WHILE_HOLD_ACTIVE"
+    },
+    {
+      "action": "Use lowest Delta E, RGB distance, candidate agreement or route result to resolve authority",
+      "status": "PROHIBITED"
+    },
+    {
+      "action": "Initiate normative 4C or ECG feasibility from an unfrozen P02 identity",
+      "status": "PROHIBITED_WHILE_HOLD_ACTIVE"
+    },
+    {
+      "action": "Generate, infer or approve CMYK or CMYKOGV device values",
+      "status": "PROHIBITED_WHILE_HOLD_ACTIVE"
+    },
+    {
+      "action": "Issue a production recommendation, release or production judgement",
+      "status": "PROHIBITED_WHILE_HOLD_ACTIVE"
+    },
+    {
+      "action": "Assign measured QC PASS, WATCH, REVIEW or BLOCK without physical measurements and documented tolerances",
+      "status": "PROHIBITED"
+    },
+    {
+      "action": "Rewrite or normalize the six supplied representations to manufacture consistency",
+      "status": "PROHIBITED"
+    }
+  ],
+  "permitted_actions": [
+    {
+      "action": "Preserve R01 through R06 and all Gate 1 through Gate 4 records unchanged with hashes and provenance",
+      "status": "PERMITTED"
+    },
+    {
+      "action": "Send the documented authority question to the responsible Brand Owner",
+      "status": "PERMITTED"
+    },
+    {
+      "action": "Receive and register new owner statements, source files, approval records, physical-standard data or measurement evidence",
+      "status": "PERMITTED_WITH_PROVENANCE_CAPTURE"
+    },
+    {
+      "action": "Validate authenticity, completeness, scope, version and chain of custody of newly supplied evidence",
+      "status": "PERMITTED"
+    },
+    {
+      "action": "Repeat candidate comparisons for research or challenge purposes",
+      "status": "PERMITTED_ONLY_AS_EXPERIMENTAL_SHADOW_NO_FREEZE"
+    },
+    {
+      "action": "Document unresolved contradictions, missing fields and requests for clarification",
+      "status": "PERMITTED"
+    },
+    {
+      "action": "Prepare a non-production P02 case summary that retains the unresolved status",
+      "status": "PERMITTED"
+    }
+  ],
+  "brand_owner_request": {
+    "primary_question_de": "Welche der sechs gelieferten Repräsentationen – oder welcher bislang nicht gelieferte physische beziehungsweise digitale Master – ist die verbindliche Farbdefinition für Northstar Green, und welcher freigegebene Nachweis belegt diese Autorität?",
+    "minimum_required_response": [
+      "Unambiguous identification of one controlling source or an explicit precedence hierarchy",
+      "Immutable source identifier, version and file hash where applicable",
+      "Written approval by the responsible Brand Owner, including approver identity and date",
+      "Complete colour-space, measurement or production conditions appropriate to the declared source type",
+      "Defined scope of approval and binding tolerances where relevant"
+    ],
+    "response_is_not_sufficient_when": [
+      "It merely states that all six representations are the same colour.",
+      "It selects the representation with the nearest ATLAS candidate or lowest colour difference.",
+      "It supplies a screenshot, visual impression or undocumented code value without provenance.",
+      "It provides CMYK values without a named device/profile and production condition.",
+      "It refers to the physical 2024 sample without uniquely identifying and evidencing that sample."
+    ]
+  },
+  "evidence_intake_requirements": {
+    "common_fields": [
+      "received_utc",
+      "sender_or_owner_identity",
+      "owner_role_and_authority",
+      "original_filename_or_record_identifier",
+      "version",
+      "sha256_if_file_based",
+      "approval_date",
+      "approval_scope",
+      "chain_of_custody",
+      "relationship_to_R01_R06"
+    ],
+    "source_specific_requirements": {
+      "physical_standard": [
+        "sample_id",
+        "custody_or_location",
+        "spectral_or_measurement_data",
+        "instrument_and_calibration",
+        "measurement_geometry",
+        "illuminant_and_observer",
+        "backing",
+        "measurement_date",
+        "signed_approval"
+      ],
+      "cielab": [
+        "exact_Lab_values",
+        "white_point",
+        "observer",
+        "measurement_or_conversion_method",
+        "source_record",
+        "signed_approval"
+      ],
+      "rgb_or_artwork": [
+        "exact_RGB_or_HEX_values",
+        "RGB_colour_space_and_profile",
+        "encoding_and_bit_depth",
+        "master_file_version_and_hash",
+        "signed_approval"
+      ],
+      "named_colour": [
+        "library_name",
+        "immutable_library_version",
+        "record_id",
+        "numerical_definition_and_conditions",
+        "signed_approval"
+      ],
+      "device_cmyk": [
+        "ICC_profile_or_print_condition",
+        "substrate",
+        "process_and_inkset",
+        "rendering_policy",
+        "derivation_from_source_reference",
+        "explicit_owner_declaration_of_intended_authority",
+        "signed_approval"
+      ]
+    }
+  },
+  "controlled_resolution_path": [
+    {
+      "step": 1,
+      "action": "Register the Brand Owner response and every supporting item as immutable evidence.",
+      "output": "AUTHORITY_RESPONSE_INTAKE_RECORD"
+    },
+    {
+      "step": 2,
+      "action": "Audit approver authority, provenance, completeness, source conditions and chain of custody without consulting candidate proximity as a selector.",
+      "output": "AUTHORITY_EVIDENCE_AUDIT"
+    },
+    {
+      "step": 3,
+      "action": "Resolve contradictions through a documented clarification cycle; retain the hold if evidence remains ambiguous, incomplete or conflicting.",
+      "output": "CLARIFIED_OR_STILL_UNRESOLVED"
+    },
+    {
+      "step": 4,
+      "action": "Create a separate Source-Authority Resolution Record naming the controlling source and the evidence that establishes it.",
+      "output": "SOURCE_AUTHORITY_RESOLVED_RECORD"
+    },
+    {
+      "step": 5,
+      "action": "Only after source authority is resolved, run the route appropriate to that declared source and create a separate identity-freeze record.",
+      "output": "SOURCE_IDENTITY_FREEZE_RECORD"
+    },
+    {
+      "step": 6,
+      "action": "Only after a valid freeze, evaluate documented 4C and ECG production conditions in parallel where those conditions are available.",
+      "output": "PARALLEL_PRODUCTION_FEASIBILITY_RECORDS"
+    },
+    {
+      "step": 7,
+      "action": "Generate device values only for an explicitly documented production condition; measured QC remains separate and requires physical output and measurement.",
+      "output": "DEVICE_AND_LATER_MEASURED_QC_RECORDS_IF_AUTHORIZED"
+    }
+  ],
+  "hold_release_criteria": {
+    "all_required": true,
+    "criteria": [
+      "A competent Brand Owner or formally delegated authority has supplied an explicit controlling-source decision.",
+      "The declared source is uniquely identifiable and its version or physical identity is controlled.",
+      "The applicable source definition and viewing, colour-space, measurement or production conditions are complete.",
+      "The approval evidence is authentic, within scope and linked to Northstar Green.",
+      "Any contradiction among supplied representations is resolved or explicitly subordinated by a documented precedence rule.",
+      "A separate evidence audit records PASS_FOR_AUTHORITY_RESOLUTION; this is not a production or measured-QC PASS."
+    ],
+    "release_action": "Create a new hold-release and source-authority resolution record. Do not alter this Gate 5 record retrospectively."
+  },
+  "state_transition": {
+    "current_state": "AUTHORITY_RESOLUTION_HOLD_ACTIVE",
+    "allowed_next_states": [
+      "AUTHORITY_EVIDENCE_RECEIVED_PENDING_AUDIT",
+      "AUTHORITY_RESOLUTION_HOLD_REMAINS_ACTIVE",
+      "AUTHORITY_RESOLVED_READY_FOR_SOURCE_ROUTE"
+    ],
+    "forbidden_direct_transition": "AUTHORITY_RESOLUTION_HOLD_ACTIVE_TO_PRODUCTION_OR_QC"
+  },
+  "formal_result": {
+    "SOURCE_AUTHORITY": "UNRESOLVED",
+    "FREEZE_STATUS": "NOT_FROZEN_EXPERIMENTAL",
+    "AUTHORITY_RESOLUTION_HOLD": "ACTIVE",
+    "normative_identity_processing": "ON_HOLD",
+    "experimental_shadow_work": "PERMITTED_WITH_EXPLICIT_NON_BINDING_LABEL",
+    "production_processing": "NOT_AUTHORIZED",
+    "measured_qc_status": "NOT_MEASURED",
+    "result": "P02 may continue only through evidence intake, provenance audit, clarification and explicitly non-binding shadow analysis until the hold-release criteria are satisfied."
+  }
+}
