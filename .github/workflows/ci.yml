@@ -9,6 +9,20 @@ permissions:
   contents: read
 
 jobs:
+  shadow-identity-node:
+    name: Shadow Identity v0.3 (Node)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify all v0.2 to v0.3 migration digests independently
+        run: |
+          node evidence/shadow-identity/v0.3/verify_migration_node.mjs \
+            evidence/shadow-identity/v0.3/outputs/identity_digest_migration_v0_2_to_v0_3.csv \
+            /tmp/node-migration-report.json
+
   public-contract:
     name: Public contract (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest

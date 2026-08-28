@@ -7,6 +7,8 @@
 **Reference master:** `atlas_master__active_master__v2_illumext.pkl`  
 **Master SHA-256:** `8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4`
 
+**Normative Shadow Identity baseline:** v0.3 (`FROZEN`, effective 2026-08-28)
+
 ATLAS Clarus adds a documented colour-identity layer to open creative tools.
 
 A source colour is assigned a stable reference identity **before** ICC conversion, device output or production assessment begins.
@@ -44,6 +46,11 @@ Selection:
 2. exact tie → smaller `atlas_row_id`.
 
 The selected `source_atlas_row_id` is frozen before downstream production analysis.
+
+For the v0.3 Shadow Identity baseline, the frozen identity binds the exact
+`atlas_master_sha256 + atlas_row_id + reference` tuple. The complete baseline,
+migration mapping and independent verification evidence are published under
+[`evidence/shadow-identity/v0.3/`](evidence/shadow-identity/v0.3/).
 
 Lab, ΔE, Δλ, ICC, CMYK, gamut, substrate or device values must not retroactively redefine that frozen source identity.
 

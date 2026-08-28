@@ -1,0 +1,12 @@
+{
+  "active_master_modified": false,
+  "aggregate_identity_sha256_v0_3": "e532055b834700000f3b2b7acf5768bbffc5071a87b9a25062f24b4f3a817989",
+  "baseline_status": "FROZEN",
+  "changed_digests": 13283,
+  "migration_holds": 0,
+  "rows": 13283,
+  "scope": "PROJECT_INTERNAL_NORMATIVE_SHADOW_IDENTITY",
+  "status": "PASS",
+  "unique_v0_2_digests": 13283,
+  "unique_v0_3_digests": 13283
+}
