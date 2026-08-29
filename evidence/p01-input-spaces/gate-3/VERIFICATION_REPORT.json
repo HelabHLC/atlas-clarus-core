@@ -1,0 +1,62 @@
+{
+  "case_id": "P01-A",
+  "ci_verification": {
+    "branch": "p01-gate3-freeze-evidence",
+    "completed_at": "2026-08-29T17:06:48Z",
+    "conclusion": "success",
+    "event": "push",
+    "public_contract_matrix": {
+      "python_3_10": "success",
+      "python_3_11": "success",
+      "python_3_12": "success",
+      "python_3_13": "success"
+    },
+    "real_master_contract": "skipped_not_required_for_gate3_freeze_evidence",
+    "repository": "HelabHLC/atlas-clarus-core",
+    "run_id": 33264747394,
+    "run_number": 61,
+    "started_at": "2026-08-29T17:06:18Z",
+    "tested_commit_sha": "4acfb0ac2462bf8d7be13acb9d9fbb257226caca",
+    "workflow": "CI"
+  },
+  "freeze_status": "FROZEN",
+  "gate": "GATE-3",
+  "integrity_binding": {
+    "base_main_commit_sha": "12ce2b44c43749527a5ba57a290a0476af7dade4",
+    "binding_git_blob_sha1": "52b5b5a9945e22fb1cd845e195b864b676288e99",
+    "freeze_record_canonical_sha256": "aa0b8c3f2ea8391fc2760defde5e459a2189fd1a205575866608255babd41c9e",
+    "freeze_record_file_sha256": "fc5c6432ea580739b98c6bc8a1a8ca5432867c5a2a218ac94bab81c52d3df967",
+    "gate2_evidence_sha256": "4e740f3c6d183f389e4c16ebb06461cc679acc84fba63c7084ad6cb53540dea1"
+  },
+  "main_unchanged": true,
+  "program": "P01",
+  "proof_scope": {
+    "colour_matching_reexecuted": false,
+    "downstream_source_production_separation_verified": true,
+    "gate2_handoff_verified": true,
+    "in_memory_mutation_blocked": true,
+    "persisted_record_tamper_detected": true,
+    "persistent_readback_verified": true
+  },
+  "publication_state": "STAGED_BRANCH_ONLY",
+  "result": {
+    "atlas_hex": "#00C800",
+    "atlas_rgb": [
+      0,
+      200,
+      0
+    ],
+    "d2_rgb": 3025,
+    "gate2_selected_atlas_row_id": 5082,
+    "persisted_source_atlas_row_id": 5082,
+    "readback_source_atlas_row_id": 5082,
+    "reference": "H135_L070_C100"
+  },
+  "schema_id": "ATLAS_CLARUS_P01_GATE3_VERIFICATION_REPORT_V0_1",
+  "status": "PASS",
+  "status_transition": {
+    "from": "NOT_FROZEN_GATE2",
+    "to": "FROZEN / VERIFIED"
+  },
+  "verification_status": "VERIFIED"
+}
