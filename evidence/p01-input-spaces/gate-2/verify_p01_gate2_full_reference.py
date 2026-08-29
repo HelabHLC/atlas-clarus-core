@@ -117,6 +117,7 @@ def main():
             print(json.dumps({"status":"FAIL","failed_check":name,"checks":checks}, indent=2))
             raise SystemExit(1)
 
+    # Hash gates before any pickle loading.
     master_sha=sha256_file(master)
     gate1_sha=sha256_file(gate1_path)
     manifest_sha=sha256_file(manifest_path)
@@ -172,6 +173,7 @@ def main():
     )
     ck("p01a_input_contract", input_ok, evidence["input"])
 
+    # Only after trusted SHA-256 gate do we deserialize the pickle.
     df=pd.read_pickle(master)
     ck("master_row_count", len(df)==EXPECTED_MASTER_ROWS, len(df))
     ck("master_range_index", df.index.equals(pd.RangeIndex(0,EXPECTED_MASTER_ROWS)), repr(df.index))
@@ -253,11 +255,13 @@ def main():
     harness_note=evidence["conformance_harness"].get("staging_semantics","")
     ck("conformance_harness_staging_note", "staging" in harness_note.lower() and "workflow v3.4.0" in harness_note.lower() and "binding.py" in harness_note.lower(), harness_note)
 
+    # Verifier self-binding.
     method=evidence["verification_method"]
     ck("verifier_method", method.get("method_id")==METHOD_ID and method.get("method_version")==METHOD_VERSION, method)
     ck("verifier_self_hash", method.get("sha256")==self_sha, self_sha)
     ck("verifier_no_core_import", method.get("imports_atlas_clarus_binding") is False, method)
 
+    # Immutable report content.
     expected_report_core={
         "status":"PASS",
         "method_id":METHOD_ID,
@@ -292,6 +296,8 @@ def main():
 
     ck("report_gate_boundary", report["gate_boundary"]==boundary, report["gate_boundary"])
 
+    # Package artifact hashes: all immutable payload artifacts except the
+    # package manifest itself and SHA256SUMS.txt (to avoid mutual/self cycles).
     artifact_paths={
         manifest_path.name:manifest_path,
         manifest_path.with_suffix(".md").name:manifest_path.with_suffix(".md"),
@@ -307,6 +313,7 @@ def main():
         ck(f"package_artifact_{name}", entry.get("sha256")==sha256_file(path), f"{entry.get('sha256')} / {sha256_file(path)}")
     ck("package_report_role", package["artifacts"][report_path.name].get("role")=="FINAL_VERIFICATION_REPORT", package["artifacts"][report_path.name])
 
+    # Human-readable summary must carry final key facts.
     summary=summary_path.read_text(encoding="utf-8")
     summary_needles=[
         "atlas_row_id = 5082","H135_L070_C100","d²_RGB = 3025",
@@ -316,6 +323,7 @@ def main():
     ]
     ck("summary_key_facts", all(n in summary for n in summary_needles), summary_needles)
 
+    # Frozen manifest companion.
     companion=manifest_path.with_name("ATLAS_Clarus_Gate-2_Execution_Manifest_v0.1_SHA256SUMS.txt")
     companion_entries=parse_checksums(companion)
     companion_ok=(
@@ -324,6 +332,7 @@ def main():
     )
     ck("frozen_manifest_companion_checksums", companion_ok, companion_entries)
 
+    # Full package checksum scope: eight payload files, never SHA256SUMS itself.
     checksum_entries=parse_checksums(checksums_path)
     required_checksum_names={
         "ATLAS_Clarus_Gate-2_Execution_Manifest_v0.1_FROZEN.json",
