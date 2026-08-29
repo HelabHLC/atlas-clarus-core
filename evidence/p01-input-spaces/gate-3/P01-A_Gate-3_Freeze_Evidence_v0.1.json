@@ -1,0 +1,33 @@
+{
+  "base_core_binding": {
+    "base_commit_sha": "12ce2b44c43749527a5ba57a290a0476af7dade4",
+    "binding_git_blob_sha1": "52b5b5a9945e22fb1cd845e195b864b676288e99",
+    "binding_path": "src/atlas_clarus/binding.py",
+    "rule": "NO_BINDING_OR_PRODUCTION_LOGIC_CHANGE"
+  },
+  "case_id": "P01-A",
+  "freeze_record": {
+    "canonical_sha256": "aa0b8c3f2ea8391fc2760defde5e459a2189fd1a205575866608255babd41c9e",
+    "file_sha256": "fc5c6432ea580739b98c6bc8a1a8ca5432867c5a2a218ac94bab81c52d3df967",
+    "path": "evidence/p01-input-spaces/gate-3/P01-A_Gate-3_Source-Identity_Freeze_Record_v0.1.json"
+  },
+  "gate": "GATE-3",
+  "predecessor": {
+    "gate2_evidence_git_blob_sha1": "4a49cad0f386ea06d65b33361d61c223b4c425df",
+    "gate2_evidence_sha256": "4e740f3c6d183f389e4c16ebb06461cc679acc84fba63c7084ad6cb53540dea1",
+    "gate2_selected_atlas_row_id": 5082
+  },
+  "program": "P01",
+  "proof_scope": {
+    "colour_matching_reexecuted": false,
+    "freeze_handoff": "GATE2_SELECTED_ID_TO_PERSISTENT_SOURCE_ID",
+    "mutation_detection_required": true,
+    "readback_required": true
+  },
+  "schema_id": "ATLAS_CLARUS_P01_GATE3_FREEZE_EVIDENCE_V0_1",
+  "verification_method": {
+    "path": "evidence/p01-input-spaces/gate-3/verify_p01_gate3_freeze.py",
+    "required_outcome": "PASS"
+  },
+  "workflow_version": "3.4.0"
+}

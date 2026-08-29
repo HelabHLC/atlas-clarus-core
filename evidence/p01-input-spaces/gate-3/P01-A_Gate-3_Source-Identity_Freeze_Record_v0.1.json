@@ -1,0 +1,42 @@
+{
+  "case_id": "P01-A",
+  "downstream_boundary": {
+    "delta_lambda": "MAY_READ_SOURCE_ID_BUT_MUST_NOT_OVERWRITE",
+    "icc": "MAY_READ_SOURCE_ID_BUT_MUST_NOT_OVERWRITE",
+    "production_atlas_row_id": "SEPARATE_FIELD_ONLY",
+    "production_selection": "NOT_EXECUTED_AT_GATE3"
+  },
+  "freeze": {
+    "freeze_status": "FROZEN",
+    "immutability_rule": "SOURCE_ATLAS_ROW_ID_MUST_NEVER_BE_OVERWRITTEN",
+    "persistent_source_atlas_row_id": 5082,
+    "readback_expected_source_atlas_row_id": 5082
+  },
+  "gate": "GATE-3",
+  "master_binding": {
+    "filename": "atlas_master__active_master__v2_illumext.pkl",
+    "row_count": 13283,
+    "sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
+  },
+  "predecessor_binding": {
+    "gate2_evidence_path": "evidence/p01-input-spaces/gate-2/P01-A_Gate-2_Full-Reference_Evidence_v0.1.json",
+    "gate2_evidence_sha256": "4e740f3c6d183f389e4c16ebb06461cc679acc84fba63c7084ad6cb53540dea1",
+    "gate2_selected_atlas_row_id": 5082,
+    "gate2_status": "PASS"
+  },
+  "program": "P01",
+  "schema_id": "ATLAS_CLARUS_P01_GATE3_SOURCE_IDENTITY_FREEZE_RECORD_V0_1",
+  "source_identity": {
+    "atlas_hex": "#00C800",
+    "atlas_rgb": [
+      0,
+      200,
+      0
+    ],
+    "d2_rgb": 3025,
+    "display_row": 5083,
+    "reference": "H135_L070_C100",
+    "source_atlas_row_id": 5082
+  },
+  "workflow_version": "3.4.0"
+}
