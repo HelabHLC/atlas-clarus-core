@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "case_id": "P01-A",
+      "errors": [],
+      "independent_reconstruction": {
+        "matrix_rgb_to_xyz": [
+          [
+            0.4123907992659593,
+            0.357584339383878,
+            0.1804807884018343
+          ],
+          [
+            0.21263900587151024,
+            0.715168678767756,
+            0.07219231536073371
+          ],
+          [
+            0.01933081871559182,
+            0.11919477979462598,
+            0.9505321522496607
+          ]
+        ],
+        "xyY": [
+          0.3,
+          0.6,
+          0.715168678767756
+        ],
+        "xyz": [
+          0.357584339383878,
+          0.715168678767756,
+          0.11919477979462598
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "P01-B",
+      "errors": [],
+      "independent_reconstruction": {
+        "matrix_rgb_to_xyz": [
+          [
+            0.5766690429101305,
+            0.1855582379065463,
+            0.18822864623499466
+          ],
+          [
+            0.29734497525053605,
+            0.6273635662554661,
+            0.07529145849399786
+          ],
+          [
+            0.02703136138641234,
+            0.07068885253582723,
+            0.9913375368376386
+          ]
+        ],
+        "xyY": [
+          0.21,
+          0.71,
+          0.6273635662554661
+        ],
+        "xyz": [
+          0.1855582379065463,
+          0.6273635662554661,
+          0.07068885253582723
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "P01-C",
+      "errors": [],
+      "independent_reconstruction": {
+        "matrix_rgb_to_xyz": [
+          [
+            0.7977604896723026,
+            0.13518583717574031,
+            0.0313493495815248
+          ],
+          [
+            0.28807112822929337,
+            0.7118432178101013,
+            8.565396060525902e-05
+          ],
+          [
+            0.0,
+            0.0,
+            0.8251046025104601
+          ]
+        ],
+        "xyY": [
+          0.1596,
+          0.8404,
+          0.7118432178101013
+        ],
+        "xyz": [
+          0.13518583717574031,
+          0.7118432178101013,
+          0.0
+        ]
+      },
+      "status": "PASS"
+    }
+  ],
+  "checksum_errors": [],
+  "checksum_validation": "PASS",
+  "gate_boundary": {
+    "atlas_matching": "NOT_EXECUTED",
+    "delta_e": "NOT_EXECUTED",
+    "delta_lambda": "NOT_EXECUTED",
+    "identity_freeze": "NOT_EXECUTED",
+    "measured_qc_status": "NOT_MEASURED",
+    "pkl_matching": "NOT_EXECUTED",
+    "production": "NOT_EXECUTED"
+  },
+  "manifest_sha256": "7a887316eac2aa1959459c4a6339502bf324ff3c2213a6e26650fac03bb061bf",
+  "method_id": "ATLAS_CLARUS_P01_GATE1_REFERENCE_VERIFIER",
+  "method_version": "0.1.1",
+  "package_manifest_errors": [],
+  "package_manifest_validation": "PASS",
+  "publication_readiness": "PASS",
+  "schema_id": "ATLAS_CLARUS_P01_GATE1_VERIFICATION_REPORT_V0_1",
+  "verifier_sha256": "4063c68491347aef6f076822b529c004e703948aa241ec6773ca43ec634ebcdb"
+}

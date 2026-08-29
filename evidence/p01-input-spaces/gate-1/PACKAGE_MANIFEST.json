@@ -1,0 +1,60 @@
+{
+  "execution_timestamp": "2026-08-29T12:51:06Z",
+  "gate": "GATE-1",
+  "independent_verification": {
+    "report_filename": "VERIFICATION_REPORT.json",
+    "report_sha256": "118bbb091bec4a66269d8c1430cab78b0cccc45dca6b0f8deeabd6065ce74cd9",
+    "status": "PASS",
+    "verifier_filename": "verify_p01_gate1_reference.py",
+    "verifier_sha256": "4063c68491347aef6f076822b529c004e703948aa241ec6773ca43ec634ebcdb"
+  },
+  "manifest_sha256": "7a887316eac2aa1959459c4a6339502bf324ff3c2213a6e26650fac03bb061bf",
+  "method_boundaries": {
+    "atlas_matching_performed": false,
+    "delta_e_performed": false,
+    "delta_lambda_performed": false,
+    "identity_freeze_performed": false,
+    "measured_qc_status": "NOT_MEASURED",
+    "pkl_matching_performed": false,
+    "production_logic_performed": false
+  },
+  "program": "P01",
+  "publication_readiness": "PASS",
+  "records": [
+    {
+      "case_id": "P01-A",
+      "filename": "P01-A_Gate-1_Evidence_v0.1.json",
+      "gate1_status": "PASS",
+      "route_class": "NORMATIVE",
+      "sha256": "e7d4b87ca6274e2d15edcc975591e682c62bff3fe0ad04f90020cc846b9a8dbc"
+    },
+    {
+      "case_id": "P01-B",
+      "filename": "P01-B_Gate-1_Evidence_v0.1.json",
+      "gate1_status": "PASS",
+      "route_class": "SHADOW",
+      "sha256": "f38583a8e961f5b1133245dc25daf5b8f631f4c799b98901e38fe02ec6d41e84"
+    },
+    {
+      "case_id": "P01-C",
+      "filename": "P01-C_Gate-1_Evidence_v0.1.json",
+      "gate1_status": "PASS",
+      "route_class": "SHADOW",
+      "sha256": "4274be5a93b1106d6d3be8e8bf42ce897694afb26bb130d01301714dde8d565c"
+    }
+  ],
+  "schema_id": "ATLAS_CLARUS_P01_GATE1_EVIDENCE_PACKAGE_V0_1",
+  "scope": "INPUT_SPACE_RECONSTRUCTION_ONLY",
+  "summary": {
+    "P01-A": "PASS / NORMATIVE / Gate-2 authorized",
+    "P01-B": "PASS / SHADOW / no Gate-2 identity route",
+    "P01-C": "PASS / SHADOW / no Gate-2 identity route"
+  },
+  "verification_method": {
+    "filename": "verify_p01_gate1_reference.py",
+    "method_id": "ATLAS_CLARUS_P01_GATE1_REFERENCE_VERIFIER",
+    "method_version": "0.1.1",
+    "runtime_requirement": "Python 3.10+ standard library only",
+    "sha256": "4063c68491347aef6f076822b529c004e703948aa241ec6773ca43ec634ebcdb"
+  }
+}

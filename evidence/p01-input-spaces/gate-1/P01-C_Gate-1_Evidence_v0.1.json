@@ -1,0 +1,146 @@
+{
+  "case_id": "P01-C",
+  "clip_status": "NO_CLIP_APPLIED",
+  "conversion_path_id": "ISO22028-2_ROMM_RGB_TO_XYZ_D50",
+  "conversion_path_version": "ISO22028-2:2013_ICC_CHARACTERISATION",
+  "diagnostics": {
+    "atlas_matching": "NOT_EXECUTED",
+    "canonical_conversion_path_resolved": true,
+    "declared_input_space_resolved": true,
+    "delta_e": "NOT_EXECUTED",
+    "delta_lambda": "NOT_EXECUTED",
+    "icc_output": "NOT_EXECUTED",
+    "identity_freeze": "NOT_EXECUTED",
+    "implicit_profile_substitution": false,
+    "input_encoding_valid": true,
+    "measured_qc_status": "NOT_MEASURED",
+    "pkl_matching": "NOT_EXECUTED",
+    "pre_conversion_clipping": false,
+    "production_feasibility": "NOT_EXECUTED",
+    "source_atlas_row_id": null
+  },
+  "execution_timestamp": "2026-08-29T12:51:06Z",
+  "forward_contract": {
+    "decision": "SHADOW_COLORIMETRIC_CHALLENGER_ONLY_NO_IDENTITY_FREEZE",
+    "may_enter_gate_2": false
+  },
+  "gamut_status": "IN_DECLARED_SOURCE_RGB_GAMUT",
+  "gamut_status_definition": "The encoded uint8 RGB triplet is within the declared source encoding range; this is not destination, device, print, ICC-output, or production gamut evidence.",
+  "gate1_status": "PASS",
+  "gate_step_results": [
+    {
+      "detail": "Frozen manifest SHA-256 verified: 7a887316eac2aa1959459c4a6339502bf324ff3c2213a6e26650fac03bb061bf.",
+      "status": "PASS",
+      "step": "G1.0_VALIDATE_MANIFEST_INTEGRITY"
+    },
+    {
+      "detail": "RGB uint8 triplet validated in inclusive range 0..255.",
+      "status": "PASS",
+      "step": "G1.1_VALIDATE_CASE_AND_CHANNEL_ENCODING"
+    },
+    {
+      "detail": "Declared source encoding resolved as ROMM_RGB with native D50 white.",
+      "status": "PASS",
+      "step": "G1.2_VALIDATE_DECLARED_INPUT_SPACE"
+    },
+    {
+      "detail": "ISO22028-2_ROMM_RGB_TO_XYZ_D50 / ISO22028-2:2013_ICC_CHARACTERISATION.",
+      "status": "PASS",
+      "step": "G1.3_RESOLVE_CANONICAL_CONVERSION_PATH"
+    },
+    {
+      "detail": "Native-D50 relative XYZ reconstructed without chromatic adaptation.",
+      "status": "PASS",
+      "step": "G1.4_RECONSTRUCT_COLORIMETRIC_STATE"
+    },
+    {
+      "detail": "Source uint8 encoding range valid; no clipping applied. This is not device/production gamut evidence.",
+      "status": "PASS",
+      "step": "G1.5_RECORD_GAMUT_AND_CLIP_DIAGNOSTICS"
+    },
+    {
+      "detail": "All frozen Gate-1 required evidence fields plus verifier/source-definition metadata emitted.",
+      "status": "PASS",
+      "step": "G1.6_EMIT_GATE1_EVIDENCE"
+    },
+    {
+      "detail": "Gate-1 PASS.",
+      "status": "PASS",
+      "step": "G1.7_DECIDE_GATE1_STATUS"
+    }
+  ],
+  "input_space": "ROMM_RGB",
+  "input_space_authority": "P01_FROZEN_MANIFEST_SHADOW",
+  "manifest_binding": {
+    "manifest_id": "ATLAS-CLARUS-GATE1-EXECUTION-MANIFEST",
+    "manifest_sha256": "7a887316eac2aa1959459c4a6339502bf324ff3c2213a6e26650fac03bb061bf",
+    "manifest_status": "FROZEN",
+    "manifest_version": "0.1"
+  },
+  "reconstructed_colorimetric_state": {
+    "chromatic_adaptation": "NOT_APPLIED_GATE1_PRESERVES_DECLARED_SOURCE_WHITEPOINT",
+    "cie_xyY": {
+      "Y": 0.7118,
+      "x": 0.1596,
+      "y": 0.8404
+    },
+    "cie_xyz_relative": {
+      "X": 0.1352,
+      "Y": 0.7118,
+      "Z": 0.0,
+      "whitepoint": "D50"
+    },
+    "encoded_rgb_normalized": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "linear_rgb": [
+      0.0,
+      1.0,
+      0.0
+    ]
+  },
+  "rgb_u8": [
+    0,
+    255,
+    0
+  ],
+  "route_class": "SHADOW",
+  "schema_id": "ATLAS_CLARUS_P01_GATE1_EVIDENCE_V0_1",
+  "source_definition": {
+    "primaries_xy": [
+      [
+        0.7347,
+        0.2653
+      ],
+      [
+        0.1596,
+        0.8404
+      ],
+      [
+        0.0366,
+        0.0001
+      ]
+    ],
+    "reference": {
+      "definition": "ISO 22028-2:2013",
+      "section": "ROMMRGB.pdf: primaries, D50 white, precise nonlinear encoding, normalized primary tristimulus values",
+      "title": "ICC ROMM RGB characterization",
+      "url": "https://www.color.org/ROMMRGB.pdf"
+    },
+    "transfer": "inverse encoding: E<0.031248 -> E/16; else E^1.8",
+    "white_name": "D50",
+    "white_xy": [
+      0.3457,
+      0.3585
+    ]
+  },
+  "verification_method": {
+    "filename": "verify_p01_gate1_reference.py",
+    "method_id": "ATLAS_CLARUS_P01_GATE1_REFERENCE_VERIFIER",
+    "method_version": "0.1.1",
+    "sha256": "4063c68491347aef6f076822b529c004e703948aa241ec6773ca43ec634ebcdb",
+    "third_party_colour_library": "NONE"
+  }
+}
