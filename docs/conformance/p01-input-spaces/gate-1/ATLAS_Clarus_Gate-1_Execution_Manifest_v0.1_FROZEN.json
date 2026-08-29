@@ -1,0 +1,158 @@
+{
+  "authority_model": {
+    "P01-A": {
+      "identity_freeze_at_gate_1": false,
+      "input_space": "sRGB",
+      "may_enter_gate_2": true,
+      "route_class": "NORMATIVE",
+      "sample_rgb_u8": [
+        0,
+        255,
+        0
+      ]
+    },
+    "P01-B": {
+      "identity_freeze_at_gate_1": false,
+      "input_space": "AdobeRGB(1998)",
+      "may_enter_gate_2": false,
+      "route_class": "SHADOW",
+      "sample_rgb_u8": [
+        0,
+        255,
+        0
+      ]
+    },
+    "P01-C": {
+      "identity_freeze_at_gate_1": false,
+      "input_space": "ROMM_RGB",
+      "may_enter_gate_2": false,
+      "route_class": "SHADOW",
+      "sample_rgb_u8": [
+        0,
+        255,
+        0
+      ]
+    }
+  },
+  "conversion_rules": {
+    "canonical_whitepoint_behavior": {
+      "AdobeRGB(1998)": "preserve declared D65 source interpretation",
+      "ROMM_RGB": "preserve declared D50 source interpretation",
+      "sRGB": "preserve declared D65 source interpretation"
+    },
+    "no_atlas_matching_inside_gate_1": true,
+    "no_delta_e_inside_gate_1": true,
+    "no_delta_lambda_inside_gate_1": true,
+    "no_implicit_color_space_guessing": true,
+    "no_pre_conversion_clipping": true,
+    "no_source_atlas_row_id_assignment_inside_gate_1": true,
+    "shadow_route_identity_freeze": "FORBIDDEN"
+  },
+  "execution_order": [
+    "G1.0_VALIDATE_MANIFEST_INTEGRITY",
+    "G1.1_VALIDATE_CASE_AND_CHANNEL_ENCODING",
+    "G1.2_VALIDATE_DECLARED_INPUT_SPACE",
+    "G1.3_RESOLVE_CANONICAL_CONVERSION_PATH",
+    "G1.4_RECONSTRUCT_COLORIMETRIC_STATE",
+    "G1.5_RECORD_GAMUT_AND_CLIP_DIAGNOSTICS",
+    "G1.6_EMIT_GATE1_EVIDENCE",
+    "G1.7_DECIDE_GATE1_STATUS"
+  ],
+  "forward_contract": {
+    "P01-A": "On PASS, may proceed to Gate 2 RGB-only Full-Reference matching.",
+    "P01-B": "On PASS, remains Shadow; route to colorimetric challenger comparison only. No identity freeze.",
+    "P01-C": "On PASS, remains Shadow; route to colorimetric challenger comparison only. No identity freeze."
+  },
+  "freeze_date": "2026-08-29",
+  "freeze_policy": {
+    "backport": "FORBIDDEN",
+    "checksum_algorithm": "SHA-256",
+    "frozen_fields": "ALL",
+    "in_place_edit": "FORBIDDEN",
+    "mutation_policy": "Any semantic or byte-level change requires a new manifest version.",
+    "normative_artifact": "ATLAS_Clarus_Gate-1_Execution_Manifest_v0.1_FROZEN.json"
+  },
+  "gate": {
+    "id": "GATE-1",
+    "name": "INPUT_SPACES",
+    "program": "P01",
+    "purpose": "Deterministically validate and reconstruct declared RGB input spaces before any ATLAS reference matching."
+  },
+  "gate_boundary": {
+    "gate_1_may_assert": [
+      "input space recognized",
+      "input encoding valid",
+      "canonical conversion path executed",
+      "colorimetric reconstruction completed",
+      "gamut/clip diagnostics recorded"
+    ],
+    "gate_1_must_not_assert": [
+      "ATLAS identity",
+      "atlas_row_id",
+      "PKL match",
+      "source authority beyond the declared route class",
+      "DeltaE result",
+      "DeltaLambda result",
+      "production feasibility",
+      "ICC output validity",
+      "measured QC"
+    ]
+  },
+  "input_contract": {
+    "required_fields": [
+      "case_id",
+      "input_space",
+      "rgb_u8",
+      "input_space_authority",
+      "conversion_path_id"
+    ],
+    "rgb_u8": {
+      "channels": 3,
+      "dtype": "uint8",
+      "order": "RGB",
+      "range_inclusive": [
+        0,
+        255
+      ]
+    },
+    "space_rules": {
+      "AdobeRGB(1998)": {
+        "implicit_profile_substitution": "FORBIDDEN",
+        "interpretation": "declared Adobe RGB (1998)",
+        "whitepoint": "D65"
+      },
+      "ROMM_RGB": {
+        "implicit_profile_substitution": "FORBIDDEN",
+        "interpretation": "declared ROMM RGB",
+        "whitepoint": "D50"
+      },
+      "sRGB": {
+        "implicit_profile_substitution": "FORBIDDEN",
+        "interpretation": "encoded sRGB",
+        "whitepoint": "D65"
+      }
+    }
+  },
+  "manifest_id": "ATLAS-CLARUS-GATE1-EXECUTION-MANIFEST",
+  "required_evidence": [
+    "case_id",
+    "input_space",
+    "rgb_u8",
+    "input_space_authority",
+    "conversion_path_id",
+    "conversion_path_version",
+    "reconstructed_colorimetric_state",
+    "gamut_status",
+    "clip_status",
+    "gate1_status",
+    "diagnostics",
+    "execution_timestamp"
+  ],
+  "status": "FROZEN",
+  "status_semantics": {
+    "FAIL": "Input is invalid or ambiguous, declared space cannot be resolved, conversion fails, or required evidence is missing.",
+    "NOT_EXECUTED": "The case was not executed; no technical inference may be drawn from this status.",
+    "PASS": "Input encoding and declared color space are valid, the canonical conversion path is available, reconstruction completes, and required evidence is emitted."
+  },
+  "version": "0.1"
+}
