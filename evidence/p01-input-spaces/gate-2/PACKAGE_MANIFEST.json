@@ -1,0 +1,66 @@
+{
+  "artifacts": {
+    "ATLAS_Clarus_Gate-2_Execution_Manifest_v0.1_FROZEN.json": {
+      "role": "FROZEN_GATE2_CONTRACT_JSON",
+      "sha256": "ae866f5484eed44b0dc6b7283c81b577b39aaa8be483b3e5375adb9c96839256"
+    },
+    "ATLAS_Clarus_Gate-2_Execution_Manifest_v0.1_FROZEN.md": {
+      "role": "FROZEN_GATE2_CONTRACT_MARKDOWN",
+      "sha256": "c8f157ef9c8bc9ea239833f90680e9e73b1842211b65a281fbc05561d8c40038"
+    },
+    "ATLAS_Clarus_Gate-2_Execution_Manifest_v0.1_SHA256SUMS.txt": {
+      "role": "FROZEN_GATE2_CONTRACT_CHECKSUMS",
+      "sha256": "c9f6deeb0393d2f92c9f105e66a8066260d572663faa3b066e5efedc3172fa22"
+    },
+    "EXECUTION_SUMMARY.md": {
+      "role": "HUMAN_READABLE_EXECUTION_SUMMARY",
+      "sha256": "5ad4e3bd34ac82356a1d1269efe980da16288522709200cc76bf5aa508f3ee0a"
+    },
+    "P01-A_Gate-2_Full-Reference_Evidence_v0.1.json": {
+      "role": "GATE2_EXECUTION_EVIDENCE",
+      "sha256": "4e740f3c6d183f389e4c16ebb06461cc679acc84fba63c7084ad6cb53540dea1"
+    },
+    "VERIFICATION_REPORT.json": {
+      "role": "FINAL_VERIFICATION_REPORT",
+      "sha256": "acddd38fc8112393733d73c6118ec5a8f2ca4f9835129d081a6e22afd3eeaeee"
+    },
+    "verify_p01_gate2_full_reference.py": {
+      "role": "INDEPENDENT_FINAL_VERIFIER",
+      "sha256": "984daedcca42560f55db9743ddab99100e11a17922af3012c1e29ab8ffcfe07e"
+    }
+  },
+  "checksum_contract": {
+    "algorithm": "SHA-256",
+    "filename": "SHA256SUMS.txt",
+    "payload_count": 8,
+    "rule": "SHA256SUMS.txt binds every package payload artifact except itself.",
+    "self_included": false
+  },
+  "conformance_harness_note": "gate2_selected_atlas_row_id is a P01 conformance-harness staging field; Workflow v3.4.0 and src/atlas_clarus/binding.py are unchanged.",
+  "gate": "GATE-2",
+  "gate1_p01a_evidence_sha256": "e7d4b87ca6274e2d15edcc975591e682c62bff3fe0ad04f90020cc846b9a8dbc",
+  "manifest_sha256": "ae866f5484eed44b0dc6b7283c81b577b39aaa8be483b3e5375adb9c96839256",
+  "master_sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+  "program": "P01",
+  "publication_readiness": "PUBLICATION_READY",
+  "reproduction": {
+    "requires_external_frozen_master_sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+    "requires_published_gate1_predecessor_sha256": "e7d4b87ca6274e2d15edcc975591e682c62bff3fe0ad04f90020cc846b9a8dbc",
+    "verifier_command_documented_in": "EXECUTION_SUMMARY.md"
+  },
+  "result": {
+    "d2_rgb": 3025,
+    "freeze_status": "NOT_FROZEN_GATE2",
+    "gate2_selected_atlas_row_id": 5082,
+    "gate2_status": "PASS",
+    "gate3_authorization": "READY",
+    "reference": "H135_L070_C100",
+    "runner_up_tie_count": 2,
+    "runner_up_tied_atlas_row_ids": [
+      4886,
+      5081
+    ]
+  },
+  "schema_id": "ATLAS_CLARUS_P01_GATE2_PACKAGE_V0_1",
+  "status": "PUBLICATION_READY"
+}

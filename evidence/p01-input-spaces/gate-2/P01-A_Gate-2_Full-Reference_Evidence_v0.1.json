@@ -1,0 +1,127 @@
+{
+  "case_id": "P01-A",
+  "conformance_harness": {
+    "staging_field": "gate2_selected_atlas_row_id",
+    "staging_semantics": "This is a P01 conformance-harness staging field used to separate Gate-2 selection from Gate-3 persistent freeze. It does not replace or amend Workflow v3.4.0 or src/atlas_clarus/binding.py."
+  },
+  "diagnostics": {
+    "ranking_crosscheck": "PYTHON_LOOP_EQUALS_PANDAS_VECTORIZED_ALL_13283_ROWS",
+    "runner_up_atlas_row_id": 4886,
+    "runner_up_d2_rgb": 3136,
+    "runner_up_display_row": 4887,
+    "runner_up_reference": "H130_L070_C105",
+    "runner_up_rgb": [
+      0,
+      199,
+      0
+    ],
+    "runner_up_tie_break_applied": true,
+    "runner_up_tie_count": 2,
+    "runner_up_tied_atlas_row_ids": [
+      4886,
+      5081
+    ],
+    "winner_margin_d2": 111
+  },
+  "execution_timestamp": "2026-08-29T16:04:25Z",
+  "forward_contract": {
+    "gate3_action": "Gate-3 is authorized to freeze gate2_selected_atlas_row_id as source_atlas_row_id. Gate-2 itself remains NOT_FROZEN_GATE2.",
+    "gate3_authorization": "READY"
+  },
+  "gate": "GATE-2",
+  "gate2_status": "PASS",
+  "gate_boundary": {
+    "freeze_status": "NOT_FROZEN_GATE2",
+    "measured_qc_status": "NOT_MEASURED",
+    "persistent_source_atlas_row_id_freeze": "NOT_EXECUTED",
+    "production_atlas_row_id": "NOT_EXECUTED"
+  },
+  "input": {
+    "input_basis": "documented 8-bit sRGB",
+    "rgb_u8": [
+      0,
+      255,
+      0
+    ],
+    "route_class": "NORMATIVE"
+  },
+  "manifest_binding": {
+    "manifest_id": "ATLAS-CLARUS-P01-GATE2-EXECUTION-MANIFEST",
+    "manifest_sha256": "ae866f5484eed44b0dc6b7283c81b577b39aaa8be483b3e5375adb9c96839256",
+    "manifest_status": "FROZEN",
+    "manifest_version": "0.1"
+  },
+  "master_validation": {
+    "filename_contract": "atlas_master__active_master__v2_illumext.pkl",
+    "index_contract": "RangeIndex(0,13283)",
+    "index_status": "PASS",
+    "pickle_loaded_only_after_sha256_pass": true,
+    "row_count_actual": 13283,
+    "row_count_expected": 13283,
+    "row_count_status": "PASS",
+    "sha256_actual": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+    "sha256_expected": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+    "sha256_status": "PASS"
+  },
+  "predecessor_binding": {
+    "gate1_evidence_filename": "P01-A_Gate-1_Evidence_v0.1.json",
+    "gate1_evidence_sha256": "e7d4b87ca6274e2d15edcc975591e682c62bff3fe0ad04f90020cc846b9a8dbc",
+    "gate1_status": "PASS",
+    "input_space": "sRGB",
+    "may_enter_gate_2": true,
+    "predecessor_file_verified_by": "verify_p01_gate2_full_reference.py",
+    "repository_path": "evidence/p01-input-spaces/gate-1/P01-A_Gate-1_Evidence_v0.1.json",
+    "rgb_u8": [
+      0,
+      255,
+      0
+    ],
+    "route_class": "NORMATIVE"
+  },
+  "program": "P01",
+  "prohibited_influence_check": {
+    "cmyk_used": false,
+    "delta_e_used": false,
+    "delta_lambda_used": false,
+    "gamut_mapping_used": false,
+    "icc_used": false,
+    "lab_used": false,
+    "material_or_profile_approval_used": false
+  },
+  "schema_id": "ATLAS_CLARUS_P01_GATE2_FULL_REFERENCE_EVIDENCE_V0_1",
+  "selection": {
+    "atlas_hex": "#00C800",
+    "atlas_rgb": [
+      0,
+      200,
+      0
+    ],
+    "d2_rgb": 3025,
+    "distance_metric": "INTEGER_SQUARED_RGB",
+    "gate2_selected_atlas_row_id": 5082,
+    "gate2_selected_display_row": 5083,
+    "method": "FULL_REFERENCE_RGB_ONLY",
+    "reference": "H135_L070_C100",
+    "rows_evaluated": 13283,
+    "sort_key": [
+      "d2_rgb ASC",
+      "atlas_row_id ASC"
+    ],
+    "tie_break_applied": false,
+    "winner_tie_count": 1,
+    "winner_tied_atlas_row_ids": [
+      5082
+    ]
+  },
+  "verification_method": {
+    "filename": "verify_p01_gate2_full_reference.py",
+    "imports_atlas_clarus_binding": false,
+    "method_id": "ATLAS_CLARUS_P01_GATE2_FULL_REFERENCE_VERIFIER",
+    "method_version": "0.3.0",
+    "ranking_implementations": [
+      "PYTHON_LOOP_TUPLE_SORT",
+      "PANDAS_VECTORIZED_STABLE_SORT"
+    ],
+    "sha256": "984daedcca42560f55db9743ddab99100e11a17922af3012c1e29ab8ffcfe07e"
+  }
+}

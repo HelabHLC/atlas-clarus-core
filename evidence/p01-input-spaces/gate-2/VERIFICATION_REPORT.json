@@ -1,0 +1,55 @@
+{
+  "execution_timestamp": "2026-08-29T16:04:25Z",
+  "gate1_evidence_sha256": "e7d4b87ca6274e2d15edcc975591e682c62bff3fe0ad04f90020cc846b9a8dbc",
+  "gate2_evidence_sha256": "4e740f3c6d183f389e4c16ebb06461cc679acc84fba63c7084ad6cb53540dea1",
+  "gate2_manifest_sha256": "ae866f5484eed44b0dc6b7283c81b577b39aaa8be483b3e5375adb9c96839256",
+  "gate3_authorization": "READY",
+  "gate_boundary": {
+    "freeze_status": "NOT_FROZEN_GATE2",
+    "measured_qc_status": "NOT_MEASURED",
+    "persistent_source_atlas_row_id_freeze": "NOT_EXECUTED",
+    "production_atlas_row_id": "NOT_EXECUTED"
+  },
+  "master_sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4",
+  "method_id": "ATLAS_CLARUS_P01_GATE2_FULL_REFERENCE_VERIFIER",
+  "method_version": "0.3.0",
+  "publication_readiness": "PUBLICATION_READY",
+  "runner_up": {
+    "atlas_row_id": 4886,
+    "d2_rgb": 3136,
+    "display_row": 4887,
+    "reference": "H130_L070_C105",
+    "rgb": [
+      0,
+      199,
+      0
+    ],
+    "tie_break_applied": true,
+    "tie_count": 2,
+    "tied_atlas_row_ids": [
+      4886,
+      5081
+    ],
+    "winner_margin_d2": 111
+  },
+  "schema_id": "ATLAS_CLARUS_P01_GATE2_VERIFICATION_REPORT_V0_3",
+  "status": "PASS",
+  "verification_scope": "Immutable execution-verification record. This report is hash-bound by SHA256SUMS.txt; final package integrity is rechecked by verifier v0.3.0.",
+  "verifier_sha256": "984daedcca42560f55db9743ddab99100e11a17922af3012c1e29ab8ffcfe07e",
+  "winner": {
+    "atlas_row_id": 5082,
+    "d2_rgb": 3025,
+    "display_row": 5083,
+    "hex": "#00C800",
+    "reference": "H135_L070_C100",
+    "rgb": [
+      0,
+      200,
+      0
+    ],
+    "tie_count": 1,
+    "tied_atlas_row_ids": [
+      5082
+    ]
+  }
+}

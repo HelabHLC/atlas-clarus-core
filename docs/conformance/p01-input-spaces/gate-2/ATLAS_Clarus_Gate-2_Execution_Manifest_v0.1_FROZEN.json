@@ -1,0 +1,97 @@
+{
+  "forward_contract": {
+    "on_fail": "Gate-3 is blocked.",
+    "on_pass": "Gate-3 may freeze gate2_selected_atlas_row_id as source_atlas_row_id."
+  },
+  "freeze_date": "2026-08-29",
+  "freeze_policy": {
+    "checksum_algorithm": "SHA-256",
+    "gate2_persistent_identity_freeze": "FORBIDDEN",
+    "gate3_is_freeze_gate": true,
+    "in_place_edit": "FORBIDDEN",
+    "mutation_policy": "Any semantic or byte-level change requires a new manifest version."
+  },
+  "gate": {
+    "id": "GATE-2",
+    "name": "RGB_ONLY_FULL_REFERENCE",
+    "purpose": "Deterministically select the nearest valid ATLAS row for normative P01-A by exhaustive integer squared distance in documented 8-bit sRGB."
+  },
+  "gate_boundary": {
+    "may_assert": [
+      "frozen master validated",
+      "all 13283 rows evaluated",
+      "deterministic RGB-only winner selected",
+      "winner distance and tie diagnostics recorded"
+    ],
+    "must_not_assert": [
+      "persistent source_atlas_row_id freeze",
+      "production_atlas_row_id",
+      "DeltaLambda decision",
+      "ICC output",
+      "production feasibility",
+      "measured QC"
+    ]
+  },
+  "input_contract": {
+    "case_id": "P01-A",
+    "input_basis": "documented 8-bit sRGB",
+    "rgb_u8": [
+      0,
+      255,
+      0
+    ],
+    "route_class": "NORMATIVE"
+  },
+  "manifest_id": "ATLAS-CLARUS-P01-GATE2-EXECUTION-MANIFEST",
+  "master_contract": {
+    "atlas_row_id_basis": "DataFrame index, zero-based internal",
+    "display_row_basis": "atlas_row_id + 1",
+    "filename": "atlas_master__active_master__v2_illumext.pkl",
+    "index_contract": "RangeIndex(0,13283)",
+    "row_count": 13283,
+    "sha256": "8283ab91b10f89ac758d09ecf5fb4d6343536600a06dd468b1cc1ecf4ec747c4"
+  },
+  "predecessor_contract": {
+    "gate1_evidence_filename": "P01-A_Gate-1_Evidence_v0.1.json",
+    "gate1_evidence_sha256": "e7d4b87ca6274e2d15edcc975591e682c62bff3fe0ad04f90020cc846b9a8dbc",
+    "p01_b_authorized": false,
+    "p01_c_authorized": false,
+    "required_case": "P01-A",
+    "required_gate1_status": "PASS"
+  },
+  "program": "P01",
+  "prohibited_influences": [
+    "CIELAB",
+    "DeltaE76",
+    "DeltaE94",
+    "CMC",
+    "CIEDE2000",
+    "HLC distance",
+    "DeltaLambda",
+    "ICC",
+    "CMYK",
+    "GamutMap",
+    "material approval",
+    "profile approval"
+  ],
+  "selection_contract": {
+    "candidate_rows_evaluated": 13283,
+    "distance_metric": "INTEGER_SQUARED_RGB",
+    "formula": "(Rs-Ri)^2 + (Gs-Gi)^2 + (Bs-Bi)^2",
+    "k": "UNLIMITED",
+    "search_scope": "FULL_VALID_ATLAS",
+    "selection_output_field": "gate2_selected_atlas_row_id",
+    "sort_key": [
+      "d2_rgb ASC",
+      "atlas_row_id ASC"
+    ],
+    "tie_break": "SMALLER_ATLAS_ROW_ID"
+  },
+  "status": "FROZEN",
+  "status_semantics": {
+    "FAIL": "Master/input validation fails, exhaustive search is incomplete, deterministic selection fails, or required evidence is missing.",
+    "NOT_EXECUTED": "No Gate-2 technical inference may be drawn.",
+    "PASS": "Frozen master and input validate, all 13283 rows are evaluated, deterministic winner is selected by (d2_rgb, atlas_row_id), and required evidence is emitted."
+  },
+  "version": "0.1"
+}
